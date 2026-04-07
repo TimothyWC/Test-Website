@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Good Guys Computer — Richmond Hill's Trusted Computer Shop Since Forever</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #f5efe1;
+    --cream-dark: #ebe2ce;
+    --ink: #1d2a22;
+    --ink-soft: #3a4a3f;
+    --forest: #1f4733;
+    --forest-deep: #153324;
+    --amber: #d97a28;
+    --amber-dark: #b35e16;
+    --rule: #2a3a30;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background-image:radial-gradient(circle at 1px 1px, rgba(29,42,34,0.08) 1px, transparent 0);
+    background-size:22px 22px;
+    pointer-events:none;
+    z-index:0;
+  }
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+
+  /* ---------- TOP BAR ---------- */
+  .topbar{
+    background:var(--forest-deep);
+    color:var(--cream);
+    font-family:'DM Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:10px 0;
+    border-bottom:1px solid var(--amber);
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+  .topbar span{display:inline-flex;align-items:center;gap:8px}
+  .topbar .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);display:inline-block;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:100;
+    background:var(--cream);
+    border-bottom:2px solid var(--ink);
+    padding:18px 0;
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between}
+  .logo{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:24px;
+    letter-spacing:-0.02em;
+    color:var(--forest-deep);
+    display:flex;align-items:center;gap:10px;
+  }
+  .logo-mark{
+    width:34px;height:34px;
+    background:var(--forest-deep);
+    border-radius:4px;
+    display:grid;place-items:center;
+    color:var(--amber);
+    font-family:'DM Mono',monospace;
+    font-size:16px;font-weight:700;
+    box-shadow:3px 3px 0 var(--amber);
+  }
+  .nav-links{display:flex;gap:34px;list-style:none;font-size:14px;font-weight:500}
+  .nav-links a{color:var(--ink);text-decoration:none;position:relative;padding:4px 0;transition:color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+  .nav-links a:hover{color:var(--forest-deep)}
+  .nav-links a:hover::after{transform:scaleX(1)}
+  .nav-cta{
+    background:var(--forest-deep);color:var(--cream);
+    padding:10px 20px;text-decoration:none;
+    font-size:13px;font-weight:600;letter-spacing:0.03em;
+    border:2px solid var(--forest-deep);
+    transition:all .2s;
+  }
+  .nav-cta:hover{background:var(--amber);border-color:var(--amber);transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:100px 0 120px;
+    position:relative;
+    border-bottom:2px solid var(--ink);
+    overflow:hidden;
+  }
+  .hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:center}
+  .eyebrow{
+    font-family:'DM Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--amber-dark);
+    margin-bottom:24px;
+    display:inline-flex;align-items:center;gap:12px;
+  }
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--amber-dark)}
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:clamp(48px,7vw,92px);
+    line-height:0.92;
+    letter-spacing:-0.035em;
+    color:var(--forest-deep);
+    margin-bottom:32px;
+  }
+  h1 em{
+    font-style:italic;
+    color:var(--amber-dark);
+    font-weight:400;
+  }
+  .lede{
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:540px;
+    margin-bottom:40px;
+  }
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .btn-primary,.btn-secondary{
+    padding:16px 28px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    border:2px solid var(--ink);
+    transition:all .2s;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .btn-primary{background:var(--amber);color:var(--ink)}
+  .btn-primary:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--forest-deep)}
+  .btn-secondary{background:transparent;color:var(--ink)}
+  .btn-secondary:hover{background:var(--ink);color:var(--cream)}
+
+  /* Hero card — retro terminal */
+  .terminal{
+    background:var(--forest-deep);
+    border:2px solid var(--ink);
+    box-shadow:10px 10px 0 var(--amber);
+    padding:0;
+    font-family:'DM Mono',monospace;
+    transform:rotate(-1deg);
+  }
+  .terminal-bar{
+    background:var(--ink);
+    padding:10px 14px;
+    display:flex;align-items:center;gap:6px;
+    border-bottom:1px solid var(--forest);
+  }
+  .terminal-bar i{width:10px;height:10px;border-radius:50%;background:var(--amber);display:inline-block}
+  .terminal-bar i:nth-child(2){background:#8fa890}
+  .terminal-bar i:nth-child(3){background:#6b7a70}
+  .terminal-bar span{color:var(--cream);font-size:11px;margin-left:12px;opacity:0.6}
+  .terminal-body{padding:24px;color:#a8d4a8;font-size:13px;line-height:1.8}
+  .terminal-body .p{color:var(--amber)}
+  .terminal-body .c{color:#c8dcc2}
+  .cursor{display:inline-block;width:8px;height:14px;background:#a8d4a8;vertical-align:middle;animation:blink 1s infinite}
+  @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+
+  /* ---------- STRIP ---------- */
+  .strip{
+    background:var(--forest-deep);
+    color:var(--cream);
+    padding:24px 0;
+    overflow:hidden;
+    border-bottom:2px solid var(--ink);
+  }
+  .strip-track{
+    display:flex;gap:60px;
+    font-family:'Fraunces',serif;
+    font-size:28px;font-weight:600;
+    white-space:nowrap;
+    animation:scroll 30s linear infinite;
+  }
+  .strip-track span{display:inline-flex;align-items:center;gap:60px}
+  .strip-track span::after{content:"✦";color:var(--amber)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:110px 0;border-bottom:2px solid var(--ink)}
+  .section-head{margin-bottom:70px;max-width:720px}
+  h2{
+    font-family:'Fraunces',serif;
+    font-size:clamp(36px,5vw,62px);
+    font-weight:900;
+    line-height:1;
+    letter-spacing:-0.03em;
+    color:var(--forest-deep);
+    margin-bottom:20px;
+  }
+  h2 em{font-style:italic;color:var(--amber-dark);font-weight:400}
+  .section-head p{font-size:18px;color:var(--ink-soft);max-width:580px}
+
+  /* ---------- SERVICES ---------- */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink);border-left:2px solid var(--ink)}
+  .service{
+    padding:40px 32px;
+    border-right:2px solid var(--ink);
+    border-bottom:2px solid var(--ink);
+    background:var(--cream);
+    transition:all .3s;
+    position:relative;
+  }
+  .service:hover{background:var(--cream-dark);transform:translate(0,-4px)}
+  .service-num{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    color:var(--amber-dark);
+    letter-spacing:0.15em;
+    margin-bottom:24px;
+  }
+  .service h3{
+    font-family:'Fraunces',serif;
+    font-size:26px;
+    font-weight:900;
+    margin-bottom:14px;
+    color:var(--forest-deep);
+    letter-spacing:-0.02em;
+  }
+  .service p{color:var(--ink-soft);font-size:15px}
+
+  /* ---------- PROMISE ---------- */
+  .promise{
+    background:var(--forest-deep);
+    color:var(--cream);
+    padding:120px 0;
+    border-bottom:2px solid var(--ink);
+    position:relative;
+  }
+  .promise h2{color:var(--cream)}
+  .promise h2 em{color:var(--amber)}
+  .promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .promise-list{list-style:none}
+  .promise-list li{
+    padding:22px 0;
+    border-bottom:1px solid rgba(245,239,225,0.15);
+    display:flex;gap:20px;align-items:baseline;
+    font-size:17px;
+  }
+  .promise-list li:last-child{border-bottom:none}
+  .promise-list .tag{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    color:var(--amber);
+    letter-spacing:0.1em;
+    min-width:40px;
+  }
+  .big-quote{
+    font-family:'Fraunces',serif;
+    font-size:38px;
+    font-weight:400;
+    font-style:italic;
+    line-height:1.2;
+    color:var(--cream);
+    padding-left:30px;
+    border-left:3px solid var(--amber);
+  }
+  .big-quote small{
+    display:block;
+    font-family:'DM Mono',monospace;
+    font-size:12px;
+    font-style:normal;
+    margin-top:24px;
+    color:var(--amber);
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .review{
+    background:var(--cream);
+    border:2px solid var(--ink);
+    padding:32px 28px;
+    position:relative;
+    transition:all .3s;
+  }
+  .review:nth-child(1){transform:rotate(-1deg)}
+  .review:nth-child(2){transform:rotate(0.5deg);margin-top:20px}
+  .review:nth-child(3){transform:rotate(-0.5deg)}
+  .review:hover{transform:rotate(0) translateY(-6px);box-shadow:6px 6px 0 var(--amber)}
+  .stars{color:var(--amber);font-size:18px;margin-bottom:14px;letter-spacing:3px}
+  .review p{font-family:'Fraunces',serif;font-size:18px;line-height:1.45;color:var(--ink);margin-bottom:20px;font-style:italic}
+  .review cite{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink-soft);letter-spacing:0.08em;text-transform:uppercase;font-style:normal}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .contact-info dl{display:grid;gap:28px}
+  .contact-info dt{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--amber-dark);
+    margin-bottom:6px;
+  }
+  .contact-info dd{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    font-weight:600;
+    color:var(--forest-deep);
+    padding-bottom:20px;
+    border-bottom:1px solid rgba(29,42,34,0.15);
+  }
+  .contact-info dd a{color:inherit;text-decoration:none;transition:color .2s}
+  .contact-info dd a:hover{color:var(--amber-dark)}
+  .hours-card{
+    background:var(--forest-deep);
+    color:var(--cream);
+    padding:42px 36px;
+    border:2px solid var(--ink);
+    box-shadow:8px 8px 0 var(--amber);
+  }
+  .hours-card h3{
+    font-family:'Fraunces',serif;
+    font-size:32px;
+    margin-bottom:6px;
+    color:var(--cream);
+  }
+  .hours-card .sub{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    color:var(--amber);
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin-bottom:28px;
+  }
+  .hours-card p{font-size:15px;line-height:1.7;margin-bottom:20px;color:rgba(245,239,225,0.85)}
+  .hours-card a.btn{
+    display:inline-block;
+    background:var(--amber);
+    color:var(--ink);
+    padding:14px 26px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    border:2px solid var(--amber);
+    transition:all .2s;
+  }
+  .hours-card a.btn:hover{background:transparent;color:var(--amber)}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--cream);
+    padding:50px 0 30px;
+    text-align:center;
+    font-family:'DM Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.05em;
+  }
+  footer .logo{justify-content:center;color:var(--cream);margin-bottom:16px}
+  footer p{opacity:0.6;margin-top:14px}
+  footer .amp{color:var(--amber)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .wrap{padding:0 22px}
+    .nav-links{display:none}
+    .hero{padding:60px 0 80px}
+    .hero .wrap{grid-template-columns:1fr;gap:50px}
+    .services{grid-template-columns:1fr}
+    .promise-grid,.contact-grid{grid-template-columns:1fr;gap:50px}
+    .reviews-grid{grid-template-columns:1fr}
+    .review{transform:none!important}
+    section{padding:70px 0}
+    .big-quote{font-size:26px}
+  }
+
+  /* Entrance animations */
+  .fade-up{animation:fadeUp 0.8s ease-out backwards}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .d1{animation-delay:0.1s}.d2{animation-delay:0.25s}.d3{animation-delay:0.4s}.d4{animation-delay:0.55s}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <span><span class="dot"></span>Open & Repairing Today</span>
+    <span>Free Estimates · No Fix, No Pay</span>
+    <span>📞 (905) 883-0979</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap">
+    <div class="logo">
+      <div class="logo-mark">G</div>
+      Good Guys Computer
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#promise">Our Promise</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Free Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow fade-up d1">Richmond Hill · Est. family-run</div>
+      <h1 class="fade-up d2">The neighborhood<br>computer shop that <em>actually</em> fixes it.</h1>
+      <p class="lede fade-up d3">Over 500 new, used and refurbished computers and laptops in stock. Honest estimates, real technicians, and a simple promise: <strong>no fix, no pay.</strong> Ask for Steve or Stan — they've been doing this a long time.</p>
+      <div class="hero-cta fade-up d4">
+        <a href="tel:9058830979" class="btn-primary">Call Steve & Stan →</a>
+        <a href="#services" class="btn-secondary">See Services</a>
+      </div>
+    </div>
+    <div class="terminal fade-up d3">
+      <div class="terminal-bar"><i></i><i></i><i></i><span>goodguys ~ diagnostics</span></div>
+      <div class="terminal-body">
+        <div><span class="p">$</span> run diagnostics</div>
+        <div class="c">> scanning hardware...</div>
+        <div class="c">> checking 500+ inventory</div>
+        <div class="c">> found: your fix</div>
+        <div><span class="p">$</span> estimate</div>
+        <div class="c">> cost: <span style="color:var(--amber)">FREE</span></div>
+        <div class="c">> policy: no fix, no pay</div>
+        <div><span class="p">$</span> <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-track">
+    <span>Repairs</span><span>Laptops</span><span>Desktops</span><span>Upgrades</span><span>Trade-Ins</span><span>Free Estimates</span><span>Repairs</span><span>Laptops</span><span>Desktops</span><span>Upgrades</span><span>Trade-Ins</span><span>Free Estimates</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we <em>actually</em> do.</h2>
+      <p>No jargon, no upsells. Bring it in, we take a look for free, and you decide what happens next.</p>
+    </div>
+    <div class="services">
+      <div class="service">
+        <div class="service-num">/ 01</div>
+        <h3>Computer & Laptop Repairs</h3>
+        <p>Slow machines, broken screens, water damage, weird noises — we diagnose it for free and fix it right. No-fix-no-pay policy on every repair.</p>
+      </div>
+      <div class="service">
+        <div class="service-num">/ 02</div>
+        <h3>New, Used & Refurbished</h3>
+        <p>Over 500 computers and laptops in stock at any time. From budget refurbs to solid Dell Intel i5 builds with Windows Pro, we have something for every wallet.</p>
+      </div>
+      <div class="service">
+        <div class="service-num">/ 03</div>
+        <h3>Upgrades & Components</h3>
+        <p>RAM, hard drives, SSDs, parts — we carry it, we install it, and we price-match. Bring us a better price and we'll beat it.</p>
+      </div>
+      <div class="service">
+        <div class="service-num">/ 04</div>
+        <h3>Buy & Trade-In</h3>
+        <p>Old laptop collecting dust? We'll buy it or trade it in toward something that actually works. Fair offers, honest assessments.</p>
+      </div>
+      <div class="service">
+        <div class="service-num">/ 05</div>
+        <h3>Problem Solving & Advice</h3>
+        <p>Not sure what's wrong? Come in and chat. We've been doing this a while, and advice over a cup of coffee is always on the house.</p>
+      </div>
+      <div class="service">
+        <div class="service-num">/ 06</div>
+        <h3>Fast Turnaround</h3>
+        <p>Most repairs completed within 24 hours if parts are in stock — and they usually are, because we keep a warehouse's worth on hand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise" id="promise">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>The Good Guys <em>promise.</em></h2>
+    </div>
+    <div class="promise-grid">
+      <ul class="promise-list">
+        <li><span class="tag">01</span><span><strong>Free estimates</strong> on every single repair. Always.</span></li>
+        <li><span class="tag">02</span><span><strong>No fix, no pay.</strong> If we can't solve it, you don't owe us a cent.</span></li>
+        <li><span class="tag">03</span><span><strong>Price match + 10%.</strong> Find a better advertised price, we'll beat it.</span></li>
+        <li><span class="tag">04</span><span><strong>24-hour turnaround</strong> on most repairs when parts are in stock.</span></li>
+        <li><span class="tag">05</span><span><strong>Written quotes</strong> available on request. No surprises at pickup.</span></li>
+      </ul>
+      <blockquote class="big-quote">
+        Our guarantee is to always make sure our customers are 100% happy.
+        <small>— Steve, Owner</small>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What customers <em>say.</em></h2>
+      <p>Real reviews from real people in Richmond Hill and the GTA.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Steve has a tremendous selection of computer components and amazing knowledge. Definitely recommend!"</p>
+        <cite>— Randy S. / Local Guide</cite>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"World class customer service and product support. Helped us with an old iMac 2011. Will recommend to all."</p>
+        <cite>— NSD Family / Local Guide</cite>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Repaired my computer from water damage which I thought was completely lost. Exceptional service. Honest small business."</p>
+        <cite>— Rhett T.</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Come say <em>hello.</em></h2>
+      <p>Walk in with your broken laptop. Walk out with it working. Or at the very least, walk out with honest advice and a free estimate.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <dl>
+          <div>
+            <dt>Address</dt>
+            <dd>Unit 6 — 10593 Yonge Street<br>at Elgin Mills, Richmond Hill, ON L4C 3C5</dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:9058830979">(905) 883-0979</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:goodguysj777777@gmail.com">goodguysj777777@gmail.com</a></dd>
+          </div>
+          <div>
+            <dt>Ask For</dt>
+            <dd>Steve & Stan</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="hours-card">
+        <h3>Drop by anytime.</h3>
+        <div class="sub">No appointment needed</div>
+        <p>We're a walk-in shop. Bring your device, bring your questions, bring your old computers for trade. Free estimates while you wait — and if you're lucky, you'll get a cup of coffee with the diagnosis.</p>
+        <p>Call ahead if you want to make sure Steve is in the back working on something specific.</p>
+        <a href="tel:9058830979" class="btn">Call the shop →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="logo"><div class="logo-mark">G</div>Good Guys Computer</div>
+    <p>Richmond Hill, Ontario <span class="amp">&</span> the entire GTA</p>
+    <p>© Good Guys Computer Inc. All computers welcome.</p>
+  </div>
+</footer>
+
+</body>
+</html>
