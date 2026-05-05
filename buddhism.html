@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>02. Buddhism — The Beauty of Religion</title>
+<meta name="description" content="A reflection on the Buddha's teaching about suffering and impermanence, drawn from the Dhammapada." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/global.css" />
+<style>
+  /* ——— Buddhist palette: monastic maroon, saffron gold, parchment cream ——— */
+  :root {
+    --paper: #f5efe0;
+    --ink: #1f1815;
+    --rule: rgba(31, 24, 21, 0.2);
+    --muted: rgba(31, 24, 21, 0.6);
+    --maroon: #8a3024;
+    --gold: #d4a24c;
+    --deep: #4a2e26;
+    --sand: #ebe1c8;
+  }
+  body {
+    background:
+      radial-gradient(ellipse at 0% 0%, rgba(212, 162, 76, 0.10), transparent 50%),
+      radial-gradient(ellipse at 100% 100%, rgba(138, 48, 36, 0.08), transparent 50%),
+      var(--paper);
+  }
+
+  /* ——— Hero ——— */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+  }
+  .hero .tag {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    font-variation-settings: "SOFT" 80, "opsz" 144;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--maroon);
+  }
+  .hero .deck {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* Lotus mark */
+  .lotus {
+    width: 80px; height: 80px;
+    margin: 0 auto 2rem;
+    display: block;
+  }
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+  }
+  .lotus { animation: breathe 6s ease-in-out infinite; }
+
+  /* ——— The Quote (the showpiece) ——— */
+  .quote-stage {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+  }
+  .quote-card {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-card::before {
+    content: "";
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 300px; height: 300px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+  .quote-card::after {
+    content: "";
+    position: absolute;
+    bottom: -120px; right: -80px;
+    width: 280px; height: 280px;
+    border: 1px solid var(--maroon);
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+  .quote-card .src-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    position: relative; z-index: 1;
+  }
+  .quote-card blockquote {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    line-height: 1.25;
+    font-style: italic;
+    letter-spacing: -0.015em;
+    margin-bottom: 2rem;
+    position: relative; z-index: 1;
+    font-variation-settings: "SOFT" 80, "opsz" 144;
+  }
+  .quote-card blockquote .em {
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .quote-card cite {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--sand);
+    position: relative; z-index: 1;
+  }
+  .quote-card cite::before { content: "— "; color: var(--gold); }
+
+  /* ——— Reflection text ——— */
+  .reflection {
+    max-width: 760px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+  }
+  .reflection .part-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 1rem;
+  }
+  .reflection .part-header .num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--maroon);
+    line-height: 1;
+  }
+  .reflection .part-header h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .reflection .part-header .wc {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .reflection p {
+    font-size: 1.1rem;
+    line-height: 1.78;
+    margin-bottom: 1.4rem;
+    text-align: justify;
+    hyphens: auto;
+  }
+  .reflection .first p:first-of-type::first-letter {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 600;
+    float: left;
+    line-height: 0.85;
+    margin: 0.4rem 0.55rem -0.1rem 0;
+    font-style: italic;
+    color: var(--maroon);
+  }
+  .reflection .pali {
+    font-family: var(--font-accent);
+    font-style: italic;
+    color: var(--maroon);
+  }
+
+  /* ——— Divider ornament ——— */
+  .ornament-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0;
+    color: var(--gold);
+  }
+  .ornament-divider::before, .ornament-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--rule), transparent);
+  }
+  .ornament-divider .symbol {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--maroon);
+  }
+
+  /* ——— Pull-quote and side panel ——— */
+  .pull {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    line-height: 1.35;
+    color: var(--maroon);
+    margin: 2.5rem -3rem;
+    padding: 0 3rem;
+    border-left: 3px solid var(--gold);
+    font-variation-settings: "SOFT" 80;
+  }
+
+  /* ——— The four noble truths box ——— */
+  .truths {
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .truths h3 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  .truths .sub {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3rem;
+  }
+  .truths-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .truth {
+    padding: 1.6rem;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .truth:last-child { border-right: none; }
+  .truth .mark {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 2.4rem;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0.6rem;
+  }
+  .truth .name {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--maroon);
+    margin-bottom: 0.4rem;
+  }
+  .truth p { font-size: 0.95rem; line-height: 1.5; color: var(--muted); }
+
+  @media (max-width: 760px) {
+    .quote-card { padding: 3rem 1.5rem; }
+    .truths-grid { grid-template-columns: 1fr 1fr; }
+    .truth:nth-child(2n) { border-right: none; }
+    .truth:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .pull { margin: 2rem 0; padding: 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand"><a href="index.html"><span class="ornament"></span><span>The Beauty of Religion</span></a></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="hinduism.html">Hinduism</a></li>
+    <li><a href="buddhism.html" class="active">Buddhism</a></li>
+    <li><a href="judaism.html">Judaism</a></li>
+    <li><a href="christianity.html">Christianity</a></li>
+    <li><a href="islam.html">Islam</a></li>
+    <li><a href="works-cited.html">Sources</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <svg class="lotus" viewBox="0 0 80 80" aria-hidden="true">
+    <g fill="none" stroke="#8a3024" stroke-width="1.4">
+      <ellipse cx="40" cy="40" rx="8" ry="22"/>
+      <ellipse cx="40" cy="40" rx="8" ry="22" transform="rotate(45 40 40)"/>
+      <ellipse cx="40" cy="40" rx="8" ry="22" transform="rotate(90 40 40)"/>
+      <ellipse cx="40" cy="40" rx="8" ry="22" transform="rotate(135 40 40)"/>
+      <circle cx="40" cy="40" r="5" fill="#d4a24c" stroke="none"/>
+    </g>
+  </svg>
+  <div class="tag">02 · Buddhism · Reflection on Ancient Wisdom</div>
+  <h1>On the <em>weight</em> of being human.</h1>
+  <p class="deck">A reflection on a single line from the Dhammapada &mdash; and on what the Buddha understood about suffering twenty-five centuries before psychology was invented.</p>
+</header>
+
+<section class="quote-stage reveal">
+  <div class="quote-card">
+    <div class="src-tag">— Dhammapada · Verse 277 —</div>
+    <blockquote>
+      &ldquo;All conditioned things are <span class="em">impermanent</span>. When one sees this with wisdom, one turns away from suffering. This is the path to purity.&rdquo;
+    </blockquote>
+    <cite>The Buddha · attributed; Pali Canon, c. 1st c. BCE</cite>
+  </div>
+</section>
+
+<article class="reflection">
+
+  <!-- Paragraph 1: meaning of the quote in Buddhist context -->
+  <div class="part-header">
+    <span class="num">i.</span>
+    <h2>What the verse means within Buddhism</h2>
+    <span class="wc">Part one</span>
+  </div>
+
+  <div class="first">
+    <p>
+      To understand this verse, you have to understand the word at its center: <span class="pali">anicca</span>, the Pali term usually translated as &ldquo;impermanence.&rdquo; For the Buddha, anicca was not a sad observation about life. It was the most basic fact about reality &mdash; the recognition that every single thing that has ever come into existence, from a galaxy to a heartbeat, is in the process of changing into something else. Nothing stays. Nothing was ever supposed to.
+    </p>
+    <p>
+      The verse sits inside the Buddha&rsquo;s larger framework of the Four Noble Truths. The first truth is that life contains <span class="pali">dukkha</span> &mdash; suffering, dissatisfaction, the persistent feeling that things are not quite right. The second truth identifies the cause: we suffer because we crave permanence in a world that does not offer it. We grip relationships, possessions, our youth, our identities, and we are crushed when those things change &mdash; even though change was always going to come.
+    </p>
+    <p>
+      What the Dhammapada is saying, then, is something liberating rather than depressing. The verse argues that wisdom &mdash; not denial, not optimism, but clear-eyed seeing &mdash; is what releases a person from suffering. When you genuinely accept that everything is impermanent, you stop fighting reality. You stop expecting your friendships, your moods, even your own body to stay frozen. And in that acceptance, the second arrow of suffering &mdash; the one we fire into ourselves &mdash; never gets drawn. The first arrow, pain, still lands. The Buddha was a realist. But the suffering that comes <em>on top</em> of pain, the suffering that comes from refusing to accept the pain, that one we can put down. That is the &ldquo;path to purity&rdquo; the verse points to.
+    </p>
+  </div>
+
+  <div class="ornament-divider"><span class="symbol">&#10086;</span></div>
+
+  <!-- Pull quote -->
+  <p class="pull">
+    The Buddha was not promising a life without pain. He was promising a life without the second arrow.
+  </p>
+
+  <!-- Paragraph 2: why this is timeless -->
+  <div class="part-header">
+    <span class="num">ii.</span>
+    <h2>Why I chose it &mdash; and why it still tells the truth</h2>
+    <span class="wc">Part two</span>
+  </div>
+
+  <p>
+    I chose this verse because it is uncomfortably accurate about the way I &mdash; and most people my age &mdash; actually live. We live on our phones. We chase the next thing. We measure our lives in followers, grades, rankings, and we feel the floor drop every time one of those numbers slips. The Buddha would recognise this exactly. He would call it craving, and he would say, gently, that we are inventing most of our own suffering.
+  </p>
+  <p>
+    The reason this verse has survived twenty-five hundred years &mdash; passed orally from monks to monks, written down on palm leaves, carried out of India into Sri Lanka, Tibet, China, Japan, and now Toronto &mdash; is that the human pattern it describes has not changed at all. The technology is different. The economics are different. But the core problem is identical: we still cling to things that were never going to stay, and we still suffer when they leave. A teenager grieving a breakup, a parent watching their kid grow up too fast, a billionaire afraid of losing their fortune &mdash; the Buddha&rsquo;s diagnosis covers all three.
+  </p>
+  <p>
+    What makes the truth of this verse <em>timeless</em>, though, is not just that the problem is universal. It is that the solution does not depend on belief. You do not have to be Buddhist for it to work. You do not have to believe in karma or rebirth. You only have to look honestly at your own life and notice that whenever you have suffered most, it was because something was changing and you were refusing to let it. That observation is available to anyone, in any century, with or without religion. Modern psychology has spent the last fifty years rediscovering it and giving it new names &mdash; acceptance, mindfulness, cognitive defusion. The Buddha got there first, and said it more beautifully. That, to me, is what makes ancient wisdom worth listening to: it survives because it keeps being true.
+  </p>
+
+</article>
+
+<section class="truths reveal">
+  <h3>The Four Noble Truths, in one breath</h3>
+  <p class="sub">— The framework the verse belongs to —</p>
+  <div class="truths-grid">
+    <div class="truth">
+      <div class="mark">i.</div>
+      <div class="name">Dukkha</div>
+      <p>Life as we usually live it contains suffering and dissatisfaction.</p>
+    </div>
+    <div class="truth">
+      <div class="mark">ii.</div>
+      <div class="name">Samudaya</div>
+      <p>The cause of that suffering is craving &mdash; clinging to a world that won&rsquo;t hold still.</p>
+    </div>
+    <div class="truth">
+      <div class="mark">iii.</div>
+      <div class="name">Nirodha</div>
+      <p>The end of suffering is possible. Craving can be released.</p>
+    </div>
+    <div class="truth">
+      <div class="mark">iv.</div>
+      <div class="name">Magga</div>
+      <p>The way is the Eightfold Path: right view, intention, speech, action, livelihood, effort, mindfulness, concentration.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <span class="colophon">Continue to <a href="judaism.html" style="font-style:italic;">03. Judaism &rarr;</a></span>
+  <span class="pageno">Folio · 003</span>
+</footer>
+
+<script src="scripts/reveal.js"></script>
+</body>
+</html>

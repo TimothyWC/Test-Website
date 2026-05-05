@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>05. Islam — The Beauty of Religion</title>
+<meta name="description" content="A traveller's brochure to the Kingdom of Saudi Arabia and the holy cities of Mecca and Medina." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/global.css" />
+<style>
+  /* ——— Islamic palette: emerald, parchment, gold leaf, desert sand ——— */
+  :root {
+    --paper: #f4ecd8;
+    --ink: #1a2b1f;
+    --rule: rgba(26, 43, 31, 0.2);
+    --muted: rgba(26, 43, 31, 0.6);
+    --emerald: #0e5c3a;
+    --deep-em: #07432a;
+    --gold: #c89b3c;
+    --sand: #d4b87a;
+    --terra: #a85a2a;
+  }
+  body {
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(200, 155, 60, 0.10), transparent 50%),
+      radial-gradient(ellipse at 0% 100%, rgba(14, 92, 58, 0.08), transparent 50%),
+      var(--paper);
+  }
+
+  /* ——— Brochure cover ——— */
+  .cover {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+    position: relative;
+  }
+  .cover .top-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 0.6rem 0;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--emerald);
+    margin-bottom: 3rem;
+  }
+
+  .cover-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .cover-text {
+    position: relative;
+  }
+  .cover .kicker {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--terra);
+    margin-bottom: 0.5rem;
+  }
+  .cover h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    font-variation-settings: "SOFT" 50, "WONK" 1, "opsz" 144;
+    margin-bottom: 1.5rem;
+  }
+  .cover h1 .grand {
+    display: block;
+    color: var(--emerald);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .cover h1 .of {
+    display: block;
+    font-size: 0.4em;
+    font-weight: 400;
+    color: var(--muted);
+    margin: 0.3em 0;
+    font-style: italic;
+  }
+  .cover h1 .place {
+    display: block;
+    color: var(--ink);
+  }
+  .cover .deck {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 480px;
+  }
+
+  /* Geometric arabesque */
+  .arabesque {
+    aspect-ratio: 1;
+    background: var(--deep-em);
+    color: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .arabesque svg { width: 75%; height: 75%; }
+  .arabesque::before {
+    content: ""; position: absolute; inset: 12px;
+    border: 1px solid var(--gold);
+    pointer-events: none;
+  }
+  .arabesque::after {
+    content: ""; position: absolute; inset: 18px;
+    border: 1px solid var(--gold);
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  .cover .visa-stamp {
+    position: absolute;
+    bottom: -1rem; right: -1rem;
+    width: 130px; height: 130px;
+    border: 2px solid var(--terra);
+    border-radius: 50%;
+    color: var(--terra);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    transform: rotate(-12deg);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: rgba(244, 236, 216, 0.9);
+    line-height: 1.4;
+  }
+  .visa-stamp .big {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.5rem;
+    letter-spacing: 0;
+    text-transform: none;
+    margin: 0.2rem 0;
+  }
+
+  /* ——— Country fact card ——— */
+  .country {
+    max-width: 1280px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+  }
+  .country-head {
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .country-head .num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--emerald);
+  }
+  .country-head h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+  }
+  .country-head .stamp {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .country-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cfact {
+    padding: 1.6rem 1.4rem;
+    border-right: 1px solid var(--rule);
+  }
+  .cfact:last-child { border-right: none; }
+  .cfact .lbl {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 0.4rem;
+  }
+  .cfact .val {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.3;
+  }
+
+  /* ——— Country article ——— */
+  .country-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+  .country-body p {
+    font-size: 1.05rem;
+    line-height: 1.78;
+    margin-bottom: 1.2rem;
+  }
+  .country-body .first p:first-of-type::first-letter {
+    font-family: var(--font-display);
+    font-size: 4.2rem;
+    font-weight: 600;
+    float: left;
+    line-height: 0.85;
+    margin: 0.4rem 0.5rem -0.1rem 0;
+    font-style: italic;
+    color: var(--emerald);
+  }
+
+  /* ——— History section ——— */
+  .history {
+    max-width: 1280px;
+    margin: 5rem auto;
+    padding: 3rem 2rem;
+    background: var(--ink);
+    color: var(--paper);
+    position: relative;
+  }
+  .history::before {
+    content: "";
+    position: absolute; inset: 14px;
+    border: 1px solid var(--gold);
+    pointer-events: none;
+  }
+  .history .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .history h3 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+    max-width: 720px;
+  }
+  .history-cols {
+    columns: 2;
+    column-gap: 3rem;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  .history-cols p { margin-bottom: 1rem; break-inside: avoid; }
+
+  /* ——— Holy sites ——— */
+  .sites {
+    max-width: 1280px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+  }
+  .sites-head {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .sites-head .label {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .sites-head h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .site-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    border: 1.5px solid var(--ink);
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+  }
+  .site-card.flip { grid-template-columns: 1fr 1.2fr; }
+  .site-card.flip .site-visual { order: 2; }
+
+  .site-visual {
+    background: var(--emerald);
+    color: var(--paper);
+    padding: 3rem 2.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 360px;
+  }
+  .site-card.flip .site-visual { background: var(--deep-em); }
+  .site-visual::before {
+    content: ""; position: absolute; inset: 14px;
+    border: 1px solid var(--gold); opacity: 0.6;
+    pointer-events: none;
+  }
+  .site-visual .icon { width: 110px; align-self: center; margin: auto; }
+  .site-visual .number {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .site-visual .arabic {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--gold);
+    margin-top: 0.5rem;
+  }
+  .site-visual .city {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-align: right;
+    margin-top: auto;
+  }
+
+  .site-text {
+    padding: 3rem 2.5rem;
+  }
+  .site-text h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    line-height: 1.05;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .site-text h3 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--emerald);
+  }
+  .site-text .sub {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--terra);
+    margin-bottom: 1.5rem;
+  }
+  .site-text p {
+    font-size: 1rem;
+    line-height: 1.72;
+    margin-bottom: 1rem;
+  }
+
+  /* ——— Brochure footer (postcard) ——— */
+  .postcard {
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+  }
+  .postcard p {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+    line-height: 1.55;
+    max-width: 680px;
+    margin: 0 auto 1rem;
+  }
+  .postcard .from {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 880px) {
+    .cover-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .country-grid { grid-template-columns: 1fr 1fr; }
+    .cfact:nth-child(2n) { border-right: none; }
+    .cfact:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .country-body { grid-template-columns: 1fr; gap: 1rem; }
+    .history-cols { columns: 1; }
+    .site-card, .site-card.flip { grid-template-columns: 1fr; }
+    .site-card.flip .site-visual { order: 0; }
+    .site-visual { min-height: 240px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand"><a href="index.html"><span class="ornament"></span><span>The Beauty of Religion</span></a></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="hinduism.html">Hinduism</a></li>
+    <li><a href="buddhism.html">Buddhism</a></li>
+    <li><a href="judaism.html">Judaism</a></li>
+    <li><a href="christianity.html">Christianity</a></li>
+    <li><a href="islam.html" class="active">Islam</a></li>
+    <li><a href="works-cited.html">Sources</a></li>
+  </ul>
+</nav>
+
+<header class="cover">
+  <div class="top-strip">
+    <span>05 · A Traveller&rsquo;s Brochure</span>
+    <span>Issued · Spring MMXXVI</span>
+    <span>Series &middot; Saudi Arabia</span>
+  </div>
+
+  <div class="cover-grid">
+    <div class="cover-text">
+      <p class="kicker">— A pilgrimage of the curious —</p>
+      <h1>
+        The <span class="grand">Heart</span>
+        <span class="of">of</span>
+        <span class="place">Arabia.</span>
+      </h1>
+      <p class="deck">A traveller&rsquo;s brochure to the Kingdom of Saudi Arabia &mdash; a country of dunes, dynasties, and the two cities at the centre of one fifth of the world.</p>
+      <div class="visa-stamp">
+        <div>Approved</div>
+        <div class="big">Pilgrim</div>
+        <div>Series A &middot; 1447 AH</div>
+      </div>
+    </div>
+
+    <div class="arabesque">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <g fill="none" stroke="#c89b3c" stroke-width="1.4">
+          <circle cx="100" cy="100" r="95"/>
+          <circle cx="100" cy="100" r="70"/>
+          <circle cx="100" cy="100" r="40"/>
+          <g>
+            <polygon points="100,30 140,100 100,170 60,100" />
+            <polygon points="30,100 100,60 170,100 100,140" />
+          </g>
+          <g stroke-width="0.8" opacity="0.7">
+            <line x1="100" y1="5" x2="100" y2="195"/>
+            <line x1="5" y1="100" x2="195" y2="100"/>
+            <line x1="33" y1="33" x2="167" y2="167"/>
+            <line x1="33" y1="167" x2="167" y2="33"/>
+          </g>
+          <circle cx="100" cy="100" r="8" fill="#c89b3c"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section class="country">
+  <div class="country-head">
+    <span class="num">i.</span>
+    <h2>The land of two seas, one desert, and thirteen centuries.</h2>
+    <span class="stamp">Country in Brief</span>
+  </div>
+
+  <div class="country-grid">
+    <div class="cfact">
+      <div class="lbl">Location</div>
+      <div class="val">Arabian Peninsula, Western Asia</div>
+    </div>
+    <div class="cfact">
+      <div class="lbl">Capital</div>
+      <div class="val">Riyadh</div>
+    </div>
+    <div class="cfact">
+      <div class="lbl">Population</div>
+      <div class="val">≈ 36 million</div>
+    </div>
+    <div class="cfact">
+      <div class="lbl">Climate</div>
+      <div class="val">Arid desert · 45 °C summers</div>
+    </div>
+    <div class="cfact">
+      <div class="lbl">Language</div>
+      <div class="val">Arabic</div>
+    </div>
+    <div class="cfact">
+      <div class="lbl">Currency</div>
+      <div class="val">Saudi Riyal · ﷼</div>
+    </div>
+    <div class="cfact">
+      <div class="lbl">Geography</div>
+      <div class="val">Red Sea coast to Persian Gulf · Rub&rsquo; al Khali sand sea</div>
+    </div>
+    <div class="cfact">
+      <div class="lbl">Religion</div>
+      <div class="val">Islam, ~94% · Sunni majority</div>
+    </div>
+  </div>
+
+  <div class="country-body first">
+    <div>
+      <p>
+        Saudi Arabia occupies almost all of the Arabian Peninsula &mdash; a country roughly the size of Western Europe, bordered by the Red Sea on one side and the Persian Gulf on the other, with the Rub&rsquo; al Khali, the largest continuous sand desert on Earth, sprawling across its southern interior. The terrain is dramatic and ancient: black volcanic plateaus in the west, soft amber dunes in the south-east, jagged mountain ranges that rise out of the desert without warning. By day, summer temperatures regularly climb past 45 degrees Celsius. By night, the same desert sky is so clear that travellers describe it as the most stars they have ever seen.
+      </p>
+      <p>
+        Modern Saudi Arabia is a young nation built over an ancient one. The Kingdom was founded in 1932, but the cities at its centre have been continuously inhabited for thousands of years. Riyadh, the capital, has grown into a glassy modern metropolis of skyscrapers and shopping districts. Jeddah, on the Red Sea, is the country&rsquo;s mercantile heart and the historic gateway for pilgrims. And tucked into the western Hijaz region are the two cities that are unlike any others on the planet: Mecca and Medina, the spiritual capitals of the Muslim world.
+      </p>
+    </div>
+    <div>
+      <p>
+        For travellers, the country is opening up faster than many people realise. Since 2019, Saudi Arabia has issued tourist visas to citizens of dozens of countries, and the recently completed AlUla heritage site &mdash; with its rose-coloured cliffs and ancient Nabataean tombs &mdash; has begun drawing visitors from around the world. The Red Sea coastline, with its untouched coral reefs, is being developed into a luxury diving destination. Riyadh hosts international concerts, sporting events and Formula One races. The Saudi Arabia of 2026 is, in many ways, a different country from the one most people imagine.
+      </p>
+      <p>
+        Two cities, however, remain reserved for Muslims alone. The holy sites of Mecca and Medina are closed to non-Muslim visitors &mdash; not as an act of exclusion, but because, for over a billion people, these are the most sacred places on Earth, and access is governed by religious obligation rather than tourism. To understand why, you have to understand the religion that was born here.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="history reveal">
+  <div class="label">— Section ii · A short history —</div>
+  <h3>How a faith born in a cave outside Mecca became the world&rsquo;s second-largest religion.</h3>
+  <div class="history-cols">
+    <p>
+      In the year 610 of the Common Era, a 40-year-old merchant named Muhammad climbed into a cave on Mount Hira, just outside the desert town of Mecca, to meditate &mdash; as he had done many times before. According to Islamic tradition, on this particular night he received the first of what would become a lifetime of revelations from the angel Gabriel. The verses he was given would, over the next twenty-three years, be assembled into the Qur&rsquo;an, the central scripture of Islam.
+    </p>
+    <p>
+      The early years were not easy. Mecca in the 7th century was a polytheistic trading city, and Muhammad&rsquo;s message of strict monotheism &mdash; that there is no god but God &mdash; was unwelcome to the city&rsquo;s elites. In 622 he and his small community migrated north to the city of Yathrib, soon to be renamed Medina (&ldquo;the city of the Prophet&rdquo;). That migration, the <em>Hijra</em>, marks the start of the Islamic calendar and the moment Islam became not just a faith but a community.
+    </p>
+    <p>
+      By the time of Muhammad&rsquo;s death in 632, almost the entire Arabian Peninsula had embraced Islam. Within a century, Muslim civilisation stretched from Spain in the west to the borders of China in the east. It produced flourishing centres of learning in Baghdad, Cairo and C&oacute;rdoba, preserving and extending the scientific and philosophical inheritance of the ancient world during a period when much of Europe had forgotten it.
+    </p>
+    <p>
+      Through every century since, one detail has remained constant. Five times a day, every observant Muslim alive &mdash; from Indonesia to Toronto &mdash; turns to face the same point on Earth: the Ka&rsquo;bah, in the courtyard of the Grand Mosque in Mecca. The country is the spiritual axis of more than 1.9 billion people. To visit it &mdash; even just to imagine visiting it &mdash; is to stand at the centre of a religion that has shaped half the world.
+    </p>
+  </div>
+</section>
+
+<section class="sites">
+  <div class="sites-head">
+    <span class="label">— Section iii · Two Holy Sites —</span>
+    <h2>The two cities that no other place on Earth can replace.</h2>
+  </div>
+
+  <!-- Site 1: Masjid al-Haram -->
+  <div class="site-card reveal">
+    <div class="site-visual">
+      <div class="number">Site 01 / 02</div>
+      <svg class="icon" viewBox="0 0 120 120" aria-hidden="true">
+        <g fill="none" stroke="#c89b3c" stroke-width="1.4">
+          <rect x="40" y="50" width="40" height="50" fill="#1a2b1f"/>
+          <line x1="40" y1="60" x2="80" y2="60" stroke="#c89b3c" stroke-width="2"/>
+          <circle cx="60" cy="40" r="22" stroke-dasharray="4 4"/>
+          <circle cx="60" cy="40" r="35" stroke-dasharray="2 6" opacity="0.5"/>
+          <circle cx="60" cy="40" r="48" stroke-dasharray="1 8" opacity="0.3"/>
+        </g>
+      </svg>
+      <div>
+        <div class="arabic">— المسجد الحرام —</div>
+        <div class="city">Mecca · Hijaz</div>
+      </div>
+    </div>
+    <div class="site-text">
+      <h3>Masjid <em>al-Haram</em></h3>
+      <p class="sub">The Sacred Mosque · the most-visited mosque on Earth</p>
+      <p>
+        At the heart of Mecca lies a courtyard the size of dozens of football pitches, surrounded by minarets and columned arcades, holding at its centre a single black cube draped in gold-embroidered black cloth. This is the Ka&rsquo;bah &mdash; the qibla, the direction every Muslim faces in prayer &mdash; and the structure built around it, Masjid al-Haram, is the holiest mosque in Islam.
+      </p>
+      <p>
+        Muslims believe the original Ka&rsquo;bah was first raised by the Prophet Abraham (Ibrahim) and his son Ishmael as a house of worship for the one God. Every year, during the month of Dhu al-Hijjah, between two and three million Muslims gather here to perform the Hajj, one of the five pillars of Islam &mdash; circling the Ka&rsquo;bah seven times in a vast, silent, rotating ocean of white-robed pilgrims. It is the largest peaceful annual gathering of human beings on the planet.
+      </p>
+      <p>
+        Stand on any of the upper balconies of the Grand Mosque and what you see is hard to put into words: an immense human spiral, every person from every continent, dressed in identical white cloth, moving as a single body around a black stone box. There is no hierarchy in that crowd. Princes and labourers wear the same garments. For one week each year, Mecca becomes the most equal place on Earth.
+      </p>
+    </div>
+  </div>
+
+  <!-- Site 2: Masjid an-Nabawi -->
+  <div class="site-card flip reveal">
+    <div class="site-text">
+      <h3>Masjid <em>an-Nabawi</em></h3>
+      <p class="sub">The Prophet&rsquo;s Mosque · the second holiest site in Islam</p>
+      <p>
+        Three hundred and forty kilometres north of Mecca, in the date-palm city of Medina, is the mosque the Prophet Muhammad himself helped to build. Masjid an-Nabawi was raised in the year 622, in the days after the Hijra, and has been continuously expanded by every dynasty that has held the city since &mdash; from the early caliphs to the Ottomans to the Saudis. Today it can hold a million worshippers at once.
+      </p>
+      <p>
+        The most recognisable feature of the mosque is its Green Dome, which rises above the southeast corner. Beneath that dome lies the tomb of the Prophet, alongside two of his closest companions, Abu Bakr and &rsquo;Umar &mdash; making this the resting place of the founder of Islam himself. Pilgrims often visit Medina either before or after performing Hajj in Mecca, to pray at the Prophet&rsquo;s mosque and to walk through the streets where the first Muslim community was formed.
+      </p>
+      <p>
+        Where Mecca is intense and overwhelming, Medina is described, almost universally, as peaceful. Pilgrims speak of a quietness in the air there. Within the mosque is a small section called the Rawdah, which the Prophet is said to have called &ldquo;a garden from the gardens of Paradise.&rdquo; To pray inside it, even briefly, is, for many Muslims, the spiritual high point of a lifetime &mdash; a quiet centre at the end of a long journey.
+      </p>
+    </div>
+    <div class="site-visual">
+      <div class="number">Site 02 / 02</div>
+      <svg class="icon" viewBox="0 0 120 120" aria-hidden="true">
+        <g fill="none" stroke="#c89b3c" stroke-width="1.4">
+          <path d="M30 90 L30 60 Q30 35 60 35 Q90 35 90 60 L90 90 Z" fill="#07432a"/>
+          <line x1="30" y1="60" x2="90" y2="60" stroke="#c89b3c"/>
+          <circle cx="60" cy="35" r="3" fill="#c89b3c"/>
+          <line x1="60" y1="32" x2="60" y2="20" stroke="#c89b3c"/>
+          <path d="M55 20 Q60 15 65 20 Q60 25 55 20" fill="#c89b3c"/>
+          <rect x="20" y="80" width="6" height="20" fill="#c89b3c"/>
+          <rect x="94" y="80" width="6" height="20" fill="#c89b3c"/>
+          <line x1="40" y1="65" x2="40" y2="90" opacity="0.4"/>
+          <line x1="60" y1="65" x2="60" y2="90" opacity="0.4"/>
+          <line x1="80" y1="65" x2="80" y2="90" opacity="0.4"/>
+        </g>
+      </svg>
+      <div>
+        <div class="arabic">— المسجد النبوي —</div>
+        <div class="city">Medina · Hijaz</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="postcard reveal">
+  <p>
+    &ldquo;You arrive in Saudi Arabia thinking you&rsquo;ve come to see a country. You leave realising you&rsquo;ve stood inside the geography of a faith.&rdquo;
+  </p>
+  <div class="from">— A note from the editor &middot; Vol. I, Series A —</div>
+</section>
+
+<footer class="site-foot">
+  <span class="colophon">Continue to the <a href="works-cited.html" style="font-style:italic;">Works Cited &rarr;</a></span>
+  <span class="pageno">Folio · 006</span>
+</footer>
+
+<script src="scripts/reveal.js"></script>
+</body>
+</html>

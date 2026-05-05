@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Works Cited — The Beauty of Religion</title>
+<meta name="description" content="A categorized bibliography of all sources used in The Beauty of Religion." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/global.css" />
+<style>
+  :root {
+    --paper: #f3ecdb;
+    --ink: #1d1815;
+    --rule: rgba(29, 24, 21, 0.22);
+    --muted: rgba(29, 24, 21, 0.6);
+    --c-hindu: #c54a1f;
+    --c-buddha: #8a3024;
+    --c-jewish: #1c3a6b;
+    --c-christ: #b08648;
+    --c-islam: #0e5c3a;
+  }
+  body {
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(176, 134, 72, 0.07), transparent 50%),
+      var(--paper);
+  }
+
+  /* Hero */
+  .head {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    border-bottom: 2px solid var(--ink);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: end;
+  }
+  .head .label {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.26em;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+  .head h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    font-variation-settings: "SOFT" 50, "WONK" 1, "opsz" 144;
+  }
+  .head h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--c-buddha);
+  }
+  .head .meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+  }
+  .head .meta div { margin-bottom: 0.3rem; }
+  .head .meta strong {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: none;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+
+  /* Note */
+  .note {
+    max-width: 760px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    text-align: center;
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  /* Section per religion */
+  .section {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+  }
+  .section-head {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  .section-head .num {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    color: var(--accent);
+    letter-spacing: -0.01em;
+  }
+  .section-head .topic {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+  }
+
+  .section[data-r="hindu"]   { --accent: var(--c-hindu); }
+  .section[data-r="buddha"]  { --accent: var(--c-buddha); }
+  .section[data-r="jewish"]  { --accent: var(--c-jewish); }
+  .section[data-r="christ"]  { --accent: var(--c-christ); }
+  .section[data-r="islam"]   { --accent: var(--c-islam); }
+
+  ol.refs {
+    list-style: none;
+    counter-reset: ref;
+  }
+  ol.refs li {
+    counter-increment: ref;
+    padding: 1rem 0 1rem 3.2rem;
+    border-bottom: 1px dotted var(--rule);
+    position: relative;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    text-indent: -1.5rem;
+    padding-left: 1.5rem;
+  }
+  ol.refs li::before {
+    content: counter(ref, decimal-leading-zero);
+    position: absolute;
+    left: -1.5rem;
+    top: 1.05rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-indent: 0;
+  }
+  ol.refs li:last-child { border-bottom: none; }
+  ol.refs em { font-style: italic; }
+  ol.refs a {
+    color: var(--accent);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    word-break: break-word;
+  }
+  ol.refs a:hover { border-bottom-color: var(--accent); }
+
+  /* Final note */
+  .colophon-note {
+    max-width: 760px;
+    margin: 6rem auto 2rem;
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--rule);
+  }
+  .colophon-note p {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  @media (max-width: 760px) {
+    .head { grid-template-columns: 1fr; }
+    .head .meta { text-align: left; }
+    .section-head { grid-template-columns: 1fr; gap: 0.4rem; }
+    .section-head .topic { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand"><a href="index.html"><span class="ornament"></span><span>The Beauty of Religion</span></a></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="hinduism.html">Hinduism</a></li>
+    <li><a href="buddhism.html">Buddhism</a></li>
+    <li><a href="judaism.html">Judaism</a></li>
+    <li><a href="christianity.html">Christianity</a></li>
+    <li><a href="islam.html">Islam</a></li>
+    <li><a href="works-cited.html" class="active">Sources</a></li>
+  </ul>
+</nav>
+
+<header class="head">
+  <div>
+    <div class="label">— Bibliography —</div>
+    <h1>Works <em>Cited.</em></h1>
+  </div>
+  <div class="meta">
+    <div><strong>HRT 3M1 · Culminating Task</strong></div>
+    <div>Timothy Ivanov · Spring 2026</div>
+    <div>Sources by religion · MLA-style</div>
+  </div>
+</header>
+
+<p class="note">
+  Every source listed below was consulted directly in the research and writing of this project. Sources are organized by the religion they informed, in the order each appears on the site.
+</p>
+
+<!-- ——— HINDUISM ——— -->
+<section class="section" data-r="hindu">
+  <div class="section-head">
+    <span class="num">01</span>
+    <h2>Hinduism</h2>
+    <span class="topic">Environmental Ethics &amp; Climate Change</span>
+  </div>
+  <ol class="refs">
+    <li>Chapple, Christopher Key, and Mary Evelyn Tucker, editors. <em>Hinduism and Ecology: The Intersection of Earth, Sky, and Water.</em> Harvard University Press, 2000.</li>
+    <li>Dwivedi, O.P. <em>Hindu Religion and Environmental Well-Being.</em> The Forum on Religion and Ecology at Yale, 2011, <a href="https://fore.yale.edu/World-Religions/Hinduism">fore.yale.edu/World-Religions/Hinduism</a>.</li>
+    <li>Narayanan, Vasudha. &ldquo;&lsquo;One Tree Is Equal to Ten Sons&rsquo;: Hindu Responses to the Problems of Ecology, Population, and Consumption.&rdquo; <em>Journal of the American Academy of Religion</em>, vol. 65, no. 2, 1997, pp. 291&ndash;332.</li>
+    <li>Pew Research Center. &ldquo;Religious Composition by Country, 2010&ndash;2050.&rdquo; Pew Research Center, 2 Apr. 2015, <a href="https://www.pewresearch.org/religion/">pewresearch.org/religion</a>.</li>
+    <li>The Atharva Veda. Translated by Maurice Bloomfield, Sacred Books of the East, vol. 42, Clarendon Press, 1897. <em>Hymn to the Earth (Bhumi Suktam) referenced from XII.1.</em></li>
+    <li>Hindu Declaration on Climate Change. Bhumi Project &amp; Oxford Centre for Hindu Studies, Nov. 2015, <a href="https://www.hinduclimatedeclaration2015.org/">hinduclimatedeclaration2015.org</a>.</li>
+    <li>Guha, Ramachandra. <em>The Unquiet Woods: Ecological Change and Peasant Resistance in the Himalaya.</em> University of California Press, 2000. <em>(For the Chipko movement.)</em></li>
+    <li>Jain, Pankaj. <em>Dharma and Ecology of Hindu Communities: Sustenance and Sustainability.</em> Routledge, 2011.</li>
+  </ol>
+</section>
+
+<!-- ——— BUDDHISM ——— -->
+<section class="section" data-r="buddha">
+  <div class="section-head">
+    <span class="num">02</span>
+    <h2>Buddhism</h2>
+    <span class="topic">Reflection on the Dhammapada</span>
+  </div>
+  <ol class="refs">
+    <li>The Dhammapada: The Buddha&rsquo;s Path of Wisdom. Translated by &Aacute;cariya Buddharakkhita, Buddhist Publication Society, 1985. <em>Verse 277 referenced.</em></li>
+    <li>Rahula, Walpola. <em>What the Buddha Taught.</em> 2nd ed., Grove Press, 1974.</li>
+    <li>Gethin, Rupert. <em>The Foundations of Buddhism.</em> Oxford University Press, 1998.</li>
+    <li>Bhikkhu Bodhi, translator. <em>In the Buddha&rsquo;s Words: An Anthology of Discourses from the Pali Canon.</em> Wisdom Publications, 2005.</li>
+    <li>Kabat-Zinn, Jon. <em>Full Catastrophe Living: Using the Wisdom of Your Body and Mind to Face Stress, Pain, and Illness.</em> Revised ed., Bantam Books, 2013. <em>(For the modern psychological reception of impermanence.)</em></li>
+    <li>Harvey, Peter. <em>An Introduction to Buddhism: Teachings, History and Practices.</em> 2nd ed., Cambridge University Press, 2013.</li>
+    <li>&ldquo;The Four Noble Truths.&rdquo; BBC Religions, BBC, 17 Nov. 2009, <a href="https://www.bbc.co.uk/religion/religions/buddhism/beliefs/fournobletruths_1.shtml">bbc.co.uk/religion/religions/buddhism</a>.</li>
+  </ol>
+</section>
+
+<!-- ——— JUDAISM ——— -->
+<section class="section" data-r="jewish">
+  <div class="section-head">
+    <span class="num">03</span>
+    <h2>Judaism</h2>
+    <span class="topic">Profile of Aubrey Drake Graham</span>
+  </div>
+  <ol class="refs">
+    <li>Greenburg, Zack O&rsquo;Malley. <em>Three Kings: Diddy, Dr. Dre, Jay-Z, and Hip-Hop&rsquo;s Multibillion-Dollar Rise.</em> Little, Brown and Company, 2018. <em>(For Drake&rsquo;s career trajectory and Toronto context.)</em></li>
+    <li>Caramanica, Jon. &ldquo;Drake, the Conscientious King of Hip-Hop.&rdquo; <em>The New York Times</em>, 8 May 2017, <a href="https://www.nytimes.com/2017/05/08/arts/music/drake-more-life-billboard-music-awards.html">nytimes.com/2017/05/08/arts/music/drake-more-life</a>.</li>
+    <li>Weiss, Bari. &ldquo;The World&rsquo;s Most Famous Jewish Rapper.&rdquo; <em>Tablet Magazine</em>, 6 May 2013, <a href="https://www.tabletmag.com/sections/arts-letters/articles/drake">tabletmag.com</a>.</li>
+    <li>Drake. &ldquo;HYFR (Hell Ya F***ing Right)&rdquo; (feat. Lil Wayne). <em>Take Care</em>, Young Money / Cash Money / Republic Records, 2011. Music video directed by Director X, 2012.</li>
+    <li>Reform Judaism. &ldquo;What Is Reform Judaism?&rdquo; Union for Reform Judaism, 2024, <a href="https://reformjudaism.org/what-reform-judaism">reformjudaism.org/what-reform-judaism</a>.</li>
+    <li>Sarna, Jonathan D. <em>American Judaism: A History.</em> 2nd ed., Yale University Press, 2019.</li>
+    <li>&ldquo;Drake.&rdquo; Encyclopaedia Britannica, 2024, <a href="https://www.britannica.com/biography/Drake-Canadian-rapper">britannica.com/biography/Drake-Canadian-rapper</a>.</li>
+    <li>Wood, Mikael. &ldquo;Drake&rsquo;s Toronto: A Tour of the Rapper&rsquo;s 6.&rdquo; <em>Los Angeles Times</em>, 2 Mar. 2018.</li>
+  </ol>
+</section>
+
+<!-- ——— CHRISTIANITY ——— -->
+<section class="section" data-r="christ">
+  <div class="section-head">
+    <span class="num">04</span>
+    <h2>Christianity</h2>
+    <span class="topic">Sagrada Família &amp; the Transcendentals</span>
+  </div>
+  <ol class="refs">
+    <li>Aquinas, Thomas. <em>Summa Theologiae.</em> Translated by the Fathers of the English Dominican Province, Benziger Brothers, 1947. <em>(I, q. 39, a. 8 — on the three conditions of beauty: integritas, consonantia, claritas.)</em></li>
+    <li>Eco, Umberto. <em>The Aesthetics of Thomas Aquinas.</em> Translated by Hugh Bredin, Harvard University Press, 1988.</li>
+    <li>Burckhardt, Titus. <em>Sacred Art in East and West: Its Principles and Methods.</em> World Wisdom, 2001.</li>
+    <li>Bassegoda Nonell, Joan. <em>Antoni Gaud&iacute;: Master Architect.</em> Abbeville Press, 2000.</li>
+    <li>Zerbst, Rainer. <em>Gaud&iacute;: The Complete Works.</em> Taschen, 2019.</li>
+    <li>&ldquo;Works of Antoni Gaud&iacute;.&rdquo; UNESCO World Heritage Centre, <a href="https://whc.unesco.org/en/list/320">whc.unesco.org/en/list/320</a>.</li>
+    <li>Sagrada Fam&iacute;lia Foundation. &ldquo;The Basilica.&rdquo; Official site, 2024, <a href="https://sagradafamilia.org/en/">sagradafamilia.org</a>.</li>
+    <li>Sherry, Patrick. <em>Spirit and Beauty: An Introduction to Theological Aesthetics.</em> 2nd ed., SCM Press, 2002.</li>
+  </ol>
+</section>
+
+<!-- ——— ISLAM ——— -->
+<section class="section" data-r="islam">
+  <div class="section-head">
+    <span class="num">05</span>
+    <h2>Islam</h2>
+    <span class="topic">Saudi Arabia &amp; the Holy Cities</span>
+  </div>
+  <ol class="refs">
+    <li>Lings, Martin. <em>Muhammad: His Life Based on the Earliest Sources.</em> Inner Traditions, 2006.</li>
+    <li>Armstrong, Karen. <em>Islam: A Short History.</em> Modern Library, 2002.</li>
+    <li>Esposito, John L. <em>The Oxford History of Islam.</em> Oxford University Press, 2000.</li>
+    <li>Peters, F. E. <em>The Hajj: The Muslim Pilgrimage to Mecca and the Holy Places.</em> Princeton University Press, 1994.</li>
+    <li>&ldquo;Saudi Arabia.&rdquo; The World Factbook, Central Intelligence Agency, updated 2024, <a href="https://www.cia.gov/the-world-factbook/countries/saudi-arabia/">cia.gov/the-world-factbook/countries/saudi-arabia</a>.</li>
+    <li>&ldquo;Saudi Arabia: Country Profile.&rdquo; BBC News, 2024, <a href="https://www.bbc.com/news/world-middle-east-14702705">bbc.com/news/world-middle-east-14702705</a>.</li>
+    <li>Sardar, Ziauddin. <em>Mecca: The Sacred City.</em> Bloomsbury, 2014.</li>
+    <li>Visit Saudi. Saudi Tourism Authority, 2024, <a href="https://www.visitsaudi.com/">visitsaudi.com</a>.</li>
+    <li>&ldquo;Al-Masjid an-Nabawi.&rdquo; Saudi Ministry of Hajj and Umrah, 2024, <a href="https://www.haj.gov.sa/">haj.gov.sa</a>.</li>
+    <li>Pew Research Center. &ldquo;The World&rsquo;s Muslims: Religion, Politics and Society.&rdquo; Pew Research Center, 30 Apr. 2013, <a href="https://www.pewresearch.org/religion/2013/04/30/the-worlds-muslims-religion-politics-society-overview/">pewresearch.org</a>.</li>
+  </ol>
+</section>
+
+<section class="colophon-note">
+  <p>
+    Composed in Toronto, Spring of 2026. Set in Fraunces, Spectral, Cormorant Garamond and JetBrains Mono. With sincere thanks to those whose teaching and writing made this study possible.
+  </p>
+</section>
+
+<footer class="site-foot">
+  <span class="colophon"><a href="index.html" style="font-style:italic;">&larr; Back to the beginning</a></span>
+  <span class="pageno">Folio · 007 / fin.</span>
+</footer>
+
+<script src="scripts/reveal.js"></script>
+</body>
+</html>

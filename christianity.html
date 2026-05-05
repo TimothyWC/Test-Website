@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>04. Christianity — The Beauty of Religion</title>
+<meta name="description" content="An analysis of the Sagrada Família in Barcelona through Thomas Aquinas' theory of the Beautiful." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/global.css" />
+<style>
+  /* ——— Christian palette: Catalan sandstone, candle gold, stained-glass deep ——— */
+  :root {
+    --paper: #f1ead8;
+    --ink: #1a1410;
+    --rule: rgba(26, 20, 16, 0.2);
+    --muted: rgba(26, 20, 16, 0.6);
+    --stone: #b08648;
+    --rose: #8c2e3a;
+    --sky: #2a4d6a;
+    --candle: #d8a64a;
+    --mossgreen: #485a3a;
+  }
+  body {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(216, 166, 74, 0.12), transparent 50%),
+      radial-gradient(ellipse at 0% 100%, rgba(140, 46, 58, 0.06), transparent 50%),
+      var(--paper);
+  }
+
+  /* ——— Hero with cathedral photo ——— */
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+  }
+  .hero-img {
+    position: absolute; inset: 0;
+    background-image: url("https://images.unsplash.com/photo-1583779457094-ab6f0164a8d7?auto=format&fit=crop&w=1800&q=80");
+    background-size: cover;
+    background-position: center 30%;
+    filter: contrast(1.05) saturate(0.9);
+  }
+  .hero-img::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(241, 234, 216, 0.85) 0%, rgba(241, 234, 216, 0.1) 30%, rgba(26, 20, 16, 0.55) 80%, rgba(26, 20, 16, 0.85) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    grid-row: 1 / -1;
+  }
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .hero-tag {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.26em;
+    color: var(--stone);
+  }
+  .hero-loc {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--muted);
+  }
+  .hero-bottom {
+    color: var(--paper);
+    margin-top: auto;
+  }
+  .hero-bottom h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(3rem, 9vw, 7.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    font-variation-settings: "SOFT" 50, "WONK" 1, "opsz" 144;
+    margin-bottom: 1.5rem;
+    max-width: 1000px;
+  }
+  .hero-bottom h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--candle);
+  }
+  .hero-bottom .deck {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.5;
+    max-width: 700px;
+    color: var(--paper);
+    opacity: 0.9;
+  }
+
+  /* ——— Caption strip ——— */
+  .caption {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+  }
+  .caption .img-credit { font-style: italic; font-family: var(--font-display); text-transform: none; letter-spacing: 0.04em; font-size: 0.95rem; color: var(--ink); }
+
+  /* ——— Personal opening ——— */
+  .personal {
+    max-width: 760px;
+    margin: 5rem auto 3rem;
+    padding: 0 2rem;
+  }
+  .personal .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .personal h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    letter-spacing: -0.01em;
+  }
+  .personal p {
+    font-size: 1.15rem;
+    line-height: 1.78;
+    margin-bottom: 1.4rem;
+  }
+  .personal p:first-of-type::first-letter {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 600;
+    float: left;
+    line-height: 0.85;
+    margin: 0.4rem 0.55rem -0.1rem 0;
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  /* ——— Aquinas section ——— */
+  .aquinas {
+    max-width: 1280px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+  }
+  .aquinas-head {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: end;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .aquinas-head .label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 0.8rem;
+  }
+  .aquinas-head h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .aquinas-head .blurb {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  .three-conditions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .condition {
+    padding: 2.5rem 2rem;
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    position: relative;
+    transition: transform 0.5s ease, background 0.5s ease;
+  }
+  .condition:hover { transform: translateY(-6px); background: #faf3df; }
+  .condition .lt {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--rose);
+    margin-bottom: 0.5rem;
+  }
+  .condition .word {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.015em;
+  }
+  .condition .en {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .condition p { font-size: 1rem; line-height: 1.6; }
+  .condition .seal {
+    position: absolute;
+    top: -16px; right: 1.5rem;
+    width: 32px; height: 32px;
+    background: var(--candle);
+    color: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    border-radius: 50%;
+    font-size: 0.95rem;
+  }
+
+  /* ——— Defense (the argument) ——— */
+  .defense {
+    max-width: 900px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+  }
+  .defense h3 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin: 3rem 0 1rem;
+    color: var(--rose);
+    letter-spacing: -0.01em;
+  }
+  .defense h3 .marker {
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 0.72rem;
+    letter-spacing: 0.24em;
+    color: var(--stone);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .defense p {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    margin-bottom: 1.4rem;
+  }
+  .defense em.lat {
+    font-family: var(--font-accent);
+    color: var(--rose);
+    font-weight: 500;
+  }
+
+  .verdict {
+    margin-top: 4rem;
+    padding: 3rem 2.5rem;
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    position: relative;
+  }
+  .verdict::before {
+    content: ""; position: absolute; inset: 14px;
+    border: 1px solid var(--candle); pointer-events: none;
+  }
+  .verdict .lbl {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.26em;
+    color: var(--candle);
+    margin-bottom: 1.5rem;
+  }
+  .verdict p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    line-height: 1.4;
+    max-width: 720px;
+    margin: 0 auto;
+    font-variation-settings: "SOFT" 50;
+  }
+
+  /* ——— Stained glass decor ——— */
+  .glass-strip {
+    height: 80px;
+    margin: 0;
+    background: linear-gradient(
+      90deg,
+      var(--rose) 0%,
+      var(--rose) 14%,
+      var(--candle) 14%,
+      var(--candle) 28%,
+      var(--sky) 28%,
+      var(--sky) 42%,
+      var(--mossgreen) 42%,
+      var(--mossgreen) 56%,
+      var(--candle) 56%,
+      var(--candle) 70%,
+      var(--rose) 70%,
+      var(--rose) 84%,
+      var(--sky) 84%,
+      var(--sky) 100%
+    );
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    opacity: 0.85;
+    position: relative;
+  }
+  .glass-strip::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.06) 0px,
+      transparent 1px,
+      transparent 4px,
+      rgba(0,0,0,0.06) 5px
+    );
+  }
+
+  @media (max-width: 880px) {
+    .hero-bottom h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
+    .aquinas-head { grid-template-columns: 1fr; gap: 1rem; }
+    .three-conditions { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand"><a href="index.html"><span class="ornament"></span><span>The Beauty of Religion</span></a></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="hinduism.html">Hinduism</a></li>
+    <li><a href="buddhism.html">Buddhism</a></li>
+    <li><a href="judaism.html">Judaism</a></li>
+    <li><a href="christianity.html" class="active">Christianity</a></li>
+    <li><a href="islam.html">Islam</a></li>
+    <li><a href="works-cited.html">Sources</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-content">
+    <div class="hero-top">
+      <span class="hero-tag">04 · Christianity · An Analysis of the Beautiful</span>
+      <span class="hero-loc">— Barcelona, Catalonia &middot; 41.4036&deg; N, 2.1744&deg; E —</span>
+    </div>
+    <div class="hero-bottom">
+      <h1>A cathedral that <em>grows</em><br/>like a forest.</h1>
+      <p class="deck">On standing inside Antoni Gaud&iacute;&rsquo;s Sagrada Fam&iacute;lia, and on why Thomas Aquinas would have called it beautiful seven hundred years before it existed.</p>
+    </div>
+  </div>
+</header>
+
+<div class="caption">
+  <span>The Sagrada Família · La Basílica de la Sagrada Família · Construction began 1882, ongoing</span>
+  <span class="img-credit">Photographed on visit · April 2024</span>
+</div>
+
+<section class="personal">
+  <span class="label">— A personal opening —</span>
+  <h2>I had read about this building. I was not ready to feel it.</h2>
+  <p>
+    Walking into the Sagrada Família was the first time in my life that a building made me forget I was in a building. The exterior is already overwhelming &mdash; spires that climb like a coral reef toward the sky, facades carved with so much detail you can stand in front of one wall for an hour and keep finding new figures. But it is the interior that does the actual work. The columns are not columns. They are stone trees, branching as they rise, holding up a ceiling that looks like a canopy of leaves with sunlight filtering through. The light coming through the stained glass shifts as you walk &mdash; warm reds and oranges on the eastern side, cool blues and greens on the west &mdash; and the entire space hums with this quiet sense that you have stepped out of Barcelona and into a place built for a different kind of attention.
+  </p>
+  <p>
+    I was not raised especially religious. I went into the basilica curious; I came out understanding, for the first time, why people build cathedrals. It was not the size that did it. It was that every single element &mdash; every spiral, every leaf-shaped capital, every angle of light &mdash; pointed somewhere beyond itself. The whole building is engineered to make you look up. And once you look up, you cannot help thinking about what is up there. That is not an accident. That, I would later learn, is exactly what Thomas Aquinas said beauty was for.
+  </p>
+</section>
+
+<div class="glass-strip" aria-hidden="true"></div>
+
+<section class="aquinas">
+  <div class="aquinas-head">
+    <div>
+      <div class="label">— The framework —</div>
+      <h2>Aquinas on Beauty</h2>
+    </div>
+    <p class="blurb">
+      Thomas Aquinas, the 13th-century Dominican friar and most influential theologian in Western Christianity, taught that beauty is not in the eye of the beholder. It is, he argued, an objective property of things &mdash; one of the &ldquo;transcendentals&rdquo; that all good things share, alongside truth and goodness. Beauty, for Aquinas, is what reveals the divine through the visible. He gave it three conditions.
+    </p>
+  </div>
+
+  <div class="three-conditions">
+    <div class="condition reveal">
+      <div class="seal">i</div>
+      <div class="lt">Prima conditio</div>
+      <div class="word">Integritas</div>
+      <div class="en">Wholeness · Completeness</div>
+      <p>A beautiful thing has all of its parts. Nothing is missing, nothing is broken in a way that betrays the design. The thing is, in itself, complete.</p>
+    </div>
+    <div class="condition reveal">
+      <div class="seal">ii</div>
+      <div class="lt">Secunda conditio</div>
+      <div class="word">Consonantia</div>
+      <div class="en">Harmony · Proportion</div>
+      <p>The parts fit together. Their proportions, relationships and rhythms produce a coherent whole. Beauty is what happens when nothing fights itself.</p>
+    </div>
+    <div class="condition reveal">
+      <div class="seal">iii</div>
+      <div class="lt">Tertia conditio</div>
+      <div class="word">Claritas</div>
+      <div class="en">Radiance · Clarity</div>
+      <p>The thing shines. Its inner form, its meaning, is visible. Beauty is when something&rsquo;s essence becomes available to the eye and pulls the soul toward it.</p>
+    </div>
+  </div>
+</section>
+
+<article class="defense">
+
+  <h3><span class="marker">— Argument i —</span>Integritas: a building still being completed, and yet whole.</h3>
+  <p>
+    The obvious objection to calling the Sagrada Família &ldquo;whole&rdquo; is that it isn&rsquo;t finished. Construction began in 1882, Gaudí died in 1926 with less than a quarter complete, and the planned consecration date is now 2026 &mdash; a hundred and forty-four years in. But Aquinas&rsquo;s integritas is not a question of construction status. It is a question of whether the design has all its parts. Gaudí&rsquo;s blueprint already specified eighteen towers, three façades, a forest of columns, an interior modelled on the geometry of nature. Every element exists in his plans, and the building is patiently growing into them. The whole is already <em>conceived</em>. What we visit today is a complete idea in mid-construction. In that sense it is more whole than buildings that finished centuries ago and have been quietly falling apart since.
+  </p>
+
+  <h3><span class="marker">— Argument ii —</span>Consonantia: the geometry of nature, perfectly proportioned.</h3>
+  <p>
+    Gaudí&rsquo;s genius was that he refused to design like other architects. He looked at trees, at honeycomb, at human bone, at the spirals of seashells, and used those forms as his structural vocabulary. The leaning columns inside the basilica match the angles a tree trunk takes when it is bearing a load. The window arrangements use the proportions of pinecones. The famous <em>hyperbolic paraboloids</em> of the ceiling are mathematical surfaces that occur in nature long before human geometry described them. The result is a building whose proportions are not borrowed from human convention but from the natural world itself. For Aquinas, this is the deepest possible <em>consonantia</em>: a man-made thing whose parts are in harmony not just with one another but with the way creation itself is put together.
+  </p>
+
+  <h3><span class="marker">— Argument iii —</span>Claritas: light as the building&rsquo;s soul.</h3>
+  <p>
+    Of the three conditions, claritas is the one the Sagrada Família demonstrates most spectacularly. The basilica is built around light. Stained glass on the eastern Nativity side is tuned to warm tones &mdash; the colours of dawn and birth &mdash; and the western Passion side is cool and blue, the colours of evening and death. As the sun moves across the day, the entire interior shifts in temperature and feeling. The light is not decoration. It is preaching. It says, without a word, that the cycle of life and death is held together by something larger and more luminous than either. That is exactly what Aquinas meant by claritas: not literal brightness, but the visible shining of an inner truth. Few buildings in the world make a theological argument as directly as this one does, just by letting the sun in.
+  </p>
+
+  <h3><span class="marker">— Argument iv —</span>Why this directs the believer to God.</h3>
+  <p>
+    Aquinas held that beauty performs a specific spiritual function. Beautiful things, he wrote, are signs that point past themselves toward their creator &mdash; <em class="lat">vestigia Dei</em>, &ldquo;footprints of God&rdquo; in the visible world. The Sagrada Família does this almost shamelessly. Every detail of the design is built to redirect the eye, and through the eye, the soul. The columns force the gaze upward. The stained glass forces it outward, into the realm of light. The carved facades retell the gospel in stone, so that even an illiterate visitor in any century can read it. And the building is named, deliberately, not after a saint or a benefactor, but after the Holy Family &mdash; placing the worshipper inside the most ordinary unit of Christian life, parents and a child, and arguing that holiness lives there. The architecture is not asking you to be impressed. It is asking you to be humbled. That is the difference between a monument and a sanctuary.
+  </p>
+
+  <div class="verdict reveal">
+    <div class="lbl">— The verdict —</div>
+    <p>
+      The Sagrada Família satisfies all three of Aquinas&rsquo;s conditions for beauty: it is whole in concept, harmonious in proportion, and radiant in the way it carries light and meaning. By his own definition, that makes it not merely impressive, but beautiful in the strict theological sense &mdash; a true vestigium Dei in stone.
+    </p>
+  </div>
+
+</article>
+
+<footer class="site-foot">
+  <span class="colophon">Continue to <a href="islam.html" style="font-style:italic;">05. Islam &rarr;</a></span>
+  <span class="pageno">Folio · 005</span>
+</footer>
+
+<script src="scripts/reveal.js"></script>
+</body>
+</html>

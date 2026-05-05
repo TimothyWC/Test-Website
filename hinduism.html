@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>01. Hinduism — The Beauty of Religion</title>
+<meta name="description" content="An infographic on Hinduism, environmental ethics, and the climate crisis." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/global.css" />
+<style>
+  /* ——— Hindu palette: saffron sun, deep red, sage ecology, ivory ——— */
+  :root {
+    --paper: #f7eed8;
+    --ink: #2a1108;
+    --rule: rgba(42, 17, 8, 0.22);
+    --muted: rgba(42, 17, 8, 0.62);
+    --saffron: #e8590c;
+    --turmeric: #f6a623;
+    --sindhura: #b71c1c;
+    --sage: #386641;
+    --leaf: #6a994e;
+  }
+  body {
+    background:
+      radial-gradient(circle at 90% 10%, rgba(232, 89, 12, 0.09), transparent 45%),
+      radial-gradient(circle at 5% 80%, rgba(56, 102, 65, 0.10), transparent 45%),
+      var(--paper);
+  }
+
+  /* ——— Hero ——— */
+  .hero {
+    padding: 5rem 2rem 3rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: end;
+    border-bottom: 2px solid var(--ink);
+  }
+  .hero-tag {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(3rem, 8vw, 6.4rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--sindhura);
+  }
+  .hero h1 .green {
+    color: var(--sage);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .hero-aside {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.55;
+    color: var(--muted);
+    border-left: 2px solid var(--saffron);
+    padding-left: 1.4rem;
+  }
+
+  /* ——— Sun mandala SVG decoration ——— */
+  .sun-decor {
+    position: absolute;
+    top: 5rem; right: 2rem;
+    width: 120px; height: 120px;
+    opacity: 0.85;
+    animation: spin 80s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ——— Infographic main ——— */
+  .info {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .stat {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 2rem 1.6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .stat:nth-child(2) { background: var(--saffron); }
+  .stat:nth-child(3) { background: var(--sage); }
+  .stat .big {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1;
+    font-style: italic;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.02em;
+  }
+  .stat .lbl {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    opacity: 0.85;
+    margin-bottom: 0.5rem;
+  }
+  .stat .src {
+    font-family: var(--font-accent);
+    font-size: 0.92rem;
+    font-style: italic;
+    line-height: 1.4;
+    opacity: 0.92;
+  }
+
+  /* ——— Section: Five Pillars ——— */
+  .section-h {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .section-sub {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    border: 1.5px solid var(--ink);
+    margin-bottom: 4rem;
+  }
+  .pillar {
+    padding: 2rem 1.6rem;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.4s ease;
+  }
+  .pillar:hover { background: rgba(232, 89, 12, 0.08); }
+  .pillar:last-child { border-right: none; }
+  .pillar .num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--saffron);
+    letter-spacing: 0.18em;
+    margin-bottom: 0.6rem;
+  }
+  .pillar .term {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    color: var(--sindhura);
+  }
+  .pillar .trans {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .pillar p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  /* ——— Diagram: Sacred Web ——— */
+  .web-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .web-text p { margin-bottom: 1rem; }
+  .web-text .lead {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 1.6rem;
+  }
+  .web-svg { display: flex; justify-content: center; }
+
+  /* ——— Quote block ——— */
+  .verse {
+    background: var(--sindhura);
+    color: var(--paper);
+    padding: 3rem 2.5rem;
+    margin: 0 0 4rem;
+    text-align: center;
+    position: relative;
+  }
+  .verse::before, .verse::after {
+    content: "";
+    position: absolute;
+    width: 30px; height: 30px;
+    border: 2px solid var(--turmeric);
+  }
+  .verse::before { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+  .verse::after { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+  .verse .sanskrit {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--turmeric);
+    margin-bottom: 1rem;
+  }
+  .verse blockquote {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+    line-height: 1.5;
+    max-width: 720px;
+    margin: 0 auto 1.4rem;
+  }
+  .verse cite {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-style: normal;
+    opacity: 0.85;
+  }
+
+  /* ——— Timeline of action ——— */
+  .timeline { margin-bottom: 4rem; }
+  .timeline-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .timeline-track::before {
+    content: ""; position: absolute;
+    top: 30px; left: 12.5%; right: 12.5%;
+    height: 2px; background: var(--ink);
+  }
+  .step { padding: 0 1rem; position: relative; }
+  .step .dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--saffron);
+    border: 3px solid var(--paper);
+    box-shadow: 0 0 0 2px var(--ink);
+    margin: 22px auto 1.5rem;
+  }
+  .step .yr {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 0.4rem;
+    color: var(--sindhura);
+  }
+  .step h4 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .step p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+    color: var(--muted);
+  }
+
+  /* ——— Conclusion ——— */
+  .conclusion {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+    border-top: 2px solid var(--ink);
+    padding-top: 3rem;
+  }
+  .conclusion h3 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-style: italic;
+    line-height: 1;
+  }
+  .conclusion p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 880px) {
+    .hero { grid-template-columns: 1fr; gap: 1.5rem; }
+    .stat-row { grid-template-columns: 1fr; }
+    .timeline-track { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .timeline-track::before { display: none; }
+    .web-section { grid-template-columns: 1fr; }
+    .conclusion { grid-template-columns: 1fr; gap: 1rem; }
+    .sun-decor { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand"><a href="index.html"><span class="ornament"></span><span>The Beauty of Religion</span></a></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="hinduism.html" class="active">Hinduism</a></li>
+    <li><a href="buddhism.html">Buddhism</a></li>
+    <li><a href="judaism.html">Judaism</a></li>
+    <li><a href="christianity.html">Christianity</a></li>
+    <li><a href="islam.html">Islam</a></li>
+    <li><a href="works-cited.html">Sources</a></li>
+  </ul>
+</nav>
+
+<svg class="sun-decor" viewBox="0 0 120 120" aria-hidden="true">
+  <g fill="none" stroke="#e8590c" stroke-width="1.4">
+    <circle cx="60" cy="60" r="20" />
+    <circle cx="60" cy="60" r="32" stroke-dasharray="2 4" />
+    <g>
+      <line x1="60" y1="2" x2="60" y2="14" />
+      <line x1="60" y1="106" x2="60" y2="118" />
+      <line x1="2" y1="60" x2="14" y2="60" />
+      <line x1="106" y1="60" x2="118" y2="60" />
+      <line x1="20" y1="20" x2="28" y2="28" />
+      <line x1="92" y1="92" x2="100" y2="100" />
+      <line x1="100" y1="20" x2="92" y2="28" />
+      <line x1="28" y1="92" x2="20" y2="100" />
+    </g>
+  </g>
+  <text x="60" y="65" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#b71c1c">ॐ</text>
+</svg>
+
+<header class="hero">
+  <div>
+    <div class="hero-tag">01 · Hinduism · Scientific Infographic</div>
+    <h1>The Earth is <em>not</em> a resource &mdash;<br/>she is a <span class="green">mother.</span></h1>
+  </div>
+  <aside class="hero-aside">
+    What Hinduism &mdash; the world&rsquo;s oldest continuously practiced religion &mdash; can teach us about climate change, ecology, and the cost of forgetting that nature is sacred.
+  </aside>
+</header>
+
+<main class="info">
+
+  <!-- Snapshot stats -->
+  <div class="stat-row reveal">
+    <div class="stat">
+      <div class="lbl">Adherents Worldwide</div>
+      <div class="big">1.2 billion</div>
+      <div class="src">Roughly 15% of all people on Earth identify as Hindu, the majority living in India and Nepal.</div>
+    </div>
+    <div class="stat">
+      <div class="lbl">Age of Tradition</div>
+      <div class="big">~4,000 yrs</div>
+      <div class="src">The oldest layers of the Vedas date to roughly 1500 BCE — an unbroken ethical conversation about humanity and nature.</div>
+    </div>
+    <div class="stat">
+      <div class="lbl">Sacred Rivers</div>
+      <div class="big">Seven</div>
+      <div class="src">Ganga, Yamuna, Sarasvati, Godavari, Narmada, Sindhu and Kaveri — all worshipped as living goddesses.</div>
+    </div>
+  </div>
+
+  <!-- Five teachings -->
+  <h2 class="section-h">Five teachings that shape the Hindu view of nature</h2>
+  <p class="section-sub">— Foundations · Sanskrit terms &amp; their environmental meaning —</p>
+
+  <div class="pillars reveal">
+    <div class="pillar">
+      <div class="num">i.</div>
+      <div class="term">Dharma</div>
+      <div class="trans">Cosmic Order / Duty</div>
+      <p>Every living thing has a place in the cosmic order. Damaging the natural world is not just impractical &mdash; it is a moral failure, a violation of dharma itself.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">ii.</div>
+      <div class="term">Ahimsa</div>
+      <div class="trans">Non-Harm</div>
+      <p>The principle of non-violence extends to all sentient beings. This is why most observant Hindus are vegetarian, and why protecting animal habitats is a religious duty.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">iii.</div>
+      <div class="term">Prakriti</div>
+      <div class="trans">Sacred Nature</div>
+      <p>Nature is not raw material. She is Prakriti, the divine feminine, alive and worthy of reverence. Mountains, rivers and forests carry their own divinity.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">iv.</div>
+      <div class="term">Karma</div>
+      <div class="trans">Action &amp; Consequence</div>
+      <p>Every action ripples outward. Polluting a river or burning a forest creates karma that returns &mdash; not as superstition, but as ecological reality the science now confirms.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">v.</div>
+      <div class="term">Vasudhaiva Kutumbakam</div>
+      <div class="trans">The World is One Family</div>
+      <p>A single Sanskrit phrase from the Maha Upanishad that captures the entire ethic: the planet, its species and its peoples are one extended family. Climate change is therefore a family crisis.</p>
+    </div>
+  </div>
+
+  <!-- Verse -->
+  <blockquote class="verse reveal">
+    <div class="sanskrit">— Atharva Veda · Bhumi Suktam · 12.1.12 —</div>
+    <p>
+      &ldquo;O Mother Earth, whatever I dig from you may you replenish; may my action never wound your vital heart.&rdquo;
+    </p>
+    <cite>The Hymn to the Earth · c. 1000 BCE</cite>
+  </blockquote>
+
+  <!-- Sacred web diagram -->
+  <div class="web-section">
+    <div class="web-text">
+      <h2 class="section-h">A web, not a hierarchy</h2>
+      <p class="section-sub">— How the Hindu worldview differs from western models —</p>
+      <p class="lead">
+        Western thought has often placed humanity at the top of a pyramid, with nature underneath as something to be used. Hindu cosmology rejects that pyramid entirely.
+      </p>
+      <p>
+        Instead, every form of life &mdash; gods, humans, animals, plants, even elements like fire and water &mdash; is woven into a single web. Damage one strand and the whole structure trembles. This is the philosophical root of why the climate crisis is, for Hindu thinkers, a <em>spiritual</em> crisis before it is a scientific one.
+      </p>
+    </div>
+    <div class="web-svg">
+      <svg viewBox="0 0 320 320" width="320" height="320" aria-hidden="true">
+        <defs>
+          <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#f6a623" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#f6a623" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="160" cy="160" r="150" fill="url(#g1)"/>
+        <g stroke="#2a1108" stroke-width="1" fill="none" opacity="0.5">
+          <line x1="160" y1="160" x2="160" y2="30"/>
+          <line x1="160" y1="160" x2="270" y2="100"/>
+          <line x1="160" y1="160" x2="270" y2="220"/>
+          <line x1="160" y1="160" x2="160" y2="290"/>
+          <line x1="160" y1="160" x2="50" y2="220"/>
+          <line x1="160" y1="160" x2="50" y2="100"/>
+          <path d="M160,30 Q200,80 270,100" />
+          <path d="M270,100 Q260,180 270,220" />
+          <path d="M270,220 Q200,250 160,290" />
+          <path d="M160,290 Q100,250 50,220" />
+          <path d="M50,220 Q40,160 50,100" />
+          <path d="M50,100 Q100,80 160,30" />
+        </g>
+        <g font-family="Fraunces, serif" font-size="13" fill="#2a1108" font-style="italic" text-anchor="middle">
+          <circle cx="160" cy="160" r="32" fill="#b71c1c"/>
+          <text x="160" y="165" fill="#f7eed8">Brahman</text>
+          <circle cx="160" cy="30" r="18" fill="#386641"/>
+          <text x="160" y="20" font-size="11">Forests</text>
+          <circle cx="270" cy="100" r="18" fill="#386641"/>
+          <text x="270" y="80" font-size="11">Rivers</text>
+          <circle cx="270" cy="220" r="18" fill="#386641"/>
+          <text x="270" y="252" font-size="11">Animals</text>
+          <circle cx="160" cy="290" r="18" fill="#e8590c"/>
+          <text x="160" y="313" font-size="11">Humans</text>
+          <circle cx="50" cy="220" r="18" fill="#386641"/>
+          <text x="50" y="252" font-size="11">Mountains</text>
+          <circle cx="50" cy="100" r="18" fill="#386641"/>
+          <text x="50" y="80" font-size="11">Sky</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Action timeline -->
+  <div class="timeline reveal">
+    <h2 class="section-h">From scripture to street: Hinduism in environmental action</h2>
+    <p class="section-sub">— Real-world movements rooted in dharma —</p>
+
+    <div class="timeline-track">
+      <div class="step">
+        <div class="dot"></div>
+        <div class="yr">15th c.</div>
+        <h4>The Bishnoi</h4>
+        <p>A Hindu sect founded by Guru Jambheshwar codifies 29 ecological principles, including a ban on tree-felling. In 1730, 363 Bishnoi gave their lives protecting a forest of khejri trees from being cut by the Maharaja&rsquo;s soldiers.</p>
+      </div>
+      <div class="step">
+        <div class="dot"></div>
+        <div class="yr">1973</div>
+        <h4>Chipko Movement</h4>
+        <p>In the foothills of the Himalayas, village women hugged trees to stop loggers. The movement, drawing on Gandhi&rsquo;s satyagraha and rooted in Hindu reverence for forests, sparked a national environmental awakening.</p>
+      </div>
+      <div class="step">
+        <div class="dot"></div>
+        <div class="yr">1985</div>
+        <h4>Ganga Action Plan</h4>
+        <p>India launches a state-funded mission to clean the Ganges, recognising that protecting a river worshipped as a living goddess is both an ecological and a religious obligation.</p>
+      </div>
+      <div class="step">
+        <div class="dot"></div>
+        <div class="yr">2015</div>
+        <h4>Hindu Climate Declaration</h4>
+        <p>Ahead of the Paris Climate Accord, more than 60 Hindu spiritual leaders signed a declaration framing climate action as a moral imperative grounded in dharma and ahimsa.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conclusion -->
+  <div class="conclusion reveal">
+    <h3>Why this matters now.</h3>
+    <div>
+      <p>
+        Climate science can tell us how much carbon is in the atmosphere. It cannot, on its own, tell us why we should care. That is the work of ethics &mdash; and on this point, Hinduism arrived four thousand years before us.
+      </p>
+      <p>
+        The Hindu standpoint on the environment is unambiguous: the Earth is sacred, every species is family, and harming the natural world is harming ourselves. As the world searches for the moral language to face the climate crisis, the Vedas suggest that the language has been waiting all along.
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <span class="colophon">Continue to <a href="buddhism.html" style="font-style:italic;">02. Buddhism &rarr;</a></span>
+  <span class="pageno">Folio · 002</span>
+</footer>
+
+<script src="scripts/reveal.js"></script>
+</body>
+</html>

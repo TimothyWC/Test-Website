@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>03. Judaism — The Beauty of Religion</title>
+<meta name="description" content="A profile of Aubrey Drake Graham — Toronto-raised, Reform Jewish, and one of the most studied figures in pop culture." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/global.css" />
+<style>
+  /* ——— Jewish palette: deep midnight blue, ivory, gold leaf ——— */
+  :root {
+    --paper: #f5f1e6;
+    --ink: #0e1f3d;
+    --rule: rgba(14, 31, 61, 0.18);
+    --muted: rgba(14, 31, 61, 0.62);
+    --navy: #1c3a6b;
+    --gold: #c9a227;
+    --pale: #e9e1c9;
+    --deep-navy: #0e1f3d;
+  }
+  body {
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(201, 162, 39, 0.07), transparent 50%),
+      radial-gradient(ellipse at 0% 100%, rgba(28, 58, 107, 0.06), transparent 50%),
+      var(--paper);
+  }
+
+  /* ——— Hero / Magazine cover ——— */
+  .cover {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: end;
+    border-bottom: 3px double var(--ink);
+  }
+  .cover-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.26em;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .cover .kicker {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .cover h1 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(3.5rem, 12vw, 9rem);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    font-variation-settings: "SOFT" 30, "WONK" 1, "opsz" 144;
+    margin-bottom: 1rem;
+  }
+  .cover h1 .first {
+    display: block;
+    color: var(--navy);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.5em;
+    margin-bottom: -0.2em;
+  }
+  .cover h1 .last {
+    display: block;
+  }
+  .cover .deck {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    max-width: 540px;
+    margin-top: 1.5rem;
+    color: var(--muted);
+  }
+
+  /* Star of David / typographic monogram */
+  .monogram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem;
+    background: var(--deep-navy);
+    color: var(--pale);
+    aspect-ratio: 4 / 5;
+    position: relative;
+    overflow: hidden;
+  }
+  .monogram::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(201, 162, 39, 0.25), transparent 50%),
+      linear-gradient(135deg, transparent 60%, rgba(201, 162, 39, 0.1));
+  }
+  .monogram .star {
+    width: 60%;
+    margin-bottom: 1.5rem;
+    position: relative; z-index: 1;
+  }
+  .monogram .name-mono {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--gold);
+    position: relative; z-index: 1;
+    font-variation-settings: "SOFT" 80, "opsz" 144;
+  }
+  .monogram .role {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+    position: relative; z-index: 1;
+  }
+
+  /* ——— Fact strip ——— */
+  .facts {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .fact {
+    padding: 1rem 1.5rem;
+    border-right: 1px solid var(--rule);
+  }
+  .fact:last-child { border-right: none; }
+  .fact .lbl {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+  .fact .val {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15rem;
+  }
+
+  /* ——— Article body ——— */
+  .article {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 4rem;
+  }
+  .article-main {
+    font-size: 1.08rem;
+    line-height: 1.78;
+  }
+  .article-main h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    margin: 3rem 0 1rem;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+  }
+  .article-main h2 .num {
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 0.7rem;
+    letter-spacing: 0.24em;
+    color: var(--gold);
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .article-main p { margin-bottom: 1.4rem; text-align: justify; hyphens: auto; }
+  .article-main p:first-of-type::first-letter {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 600;
+    float: left;
+    line-height: 0.85;
+    margin: 0.4rem 0.55rem -0.1rem 0;
+    font-style: italic;
+    color: var(--gold);
+  }
+  .article-main em.heb {
+    font-family: var(--font-accent);
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .pull-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    line-height: 1.35;
+    color: var(--navy);
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    padding: 1.5rem 0;
+    margin: 2.5rem 0;
+    text-align: center;
+    font-variation-settings: "SOFT" 80;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: sticky;
+    top: 5rem;
+    align-self: start;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+  .sidebar h3 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .sidebar dl { font-size: 0.95rem; }
+  .sidebar dt {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--navy);
+    margin-top: 1rem;
+  }
+  .sidebar dd { color: var(--muted); line-height: 1.5; margin-bottom: 0.5rem; }
+
+  .sidebar .terms { margin-top: 2rem; }
+  .sidebar .term {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .sidebar .term .word {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--navy);
+  }
+  .sidebar .term .pron {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+  .sidebar .term .def { font-size: 0.92rem; line-height: 1.5; margin-top: 0.3rem; }
+
+  /* ——— Why Drake closing block ——— */
+  .why {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 3rem 2rem;
+    background: var(--deep-navy);
+    color: var(--pale);
+    position: relative;
+  }
+  .why::before {
+    content: "";
+    position: absolute; top: 12px; left: 12px; right: 12px; bottom: 12px;
+    border: 1px solid var(--gold);
+    pointer-events: none;
+  }
+  .why .why-head {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .why h2 {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .why p { font-size: 1.05rem; line-height: 1.75; margin-bottom: 1rem; }
+
+  @media (max-width: 880px) {
+    .cover { grid-template-columns: 1fr; }
+    .monogram { aspect-ratio: 1; }
+    .facts { grid-template-columns: 1fr 1fr; padding: 1rem; }
+    .fact:nth-child(2n) { border-right: none; }
+    .fact:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .article { grid-template-columns: 1fr; gap: 2rem; }
+    .sidebar { position: static; border-left: none; border-top: 2px solid var(--gold); padding: 1.5rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="brand"><a href="index.html"><span class="ornament"></span><span>The Beauty of Religion</span></a></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="hinduism.html">Hinduism</a></li>
+    <li><a href="buddhism.html">Buddhism</a></li>
+    <li><a href="judaism.html" class="active">Judaism</a></li>
+    <li><a href="christianity.html">Christianity</a></li>
+    <li><a href="islam.html">Islam</a></li>
+    <li><a href="works-cited.html">Sources</a></li>
+  </ul>
+</nav>
+
+<header class="cover">
+  <div>
+    <div class="cover-meta">03 · Judaism · A Profile in Faith</div>
+    <p class="kicker">Reform &middot; Toronto &middot; b. 1986</p>
+    <h1>
+      <span class="first">Aubrey</span>
+      <span class="last">Drake.</span>
+    </h1>
+    <p class="deck">A Forest Hill kid raised between two faiths who became one of the most photographed Jews on the planet &mdash; and never tried to hide it.</p>
+  </div>
+
+  <div class="monogram">
+    <svg class="star" viewBox="0 0 100 100" aria-hidden="true">
+      <g fill="none" stroke="#c9a227" stroke-width="1.4">
+        <polygon points="50,10 85,75 15,75" />
+        <polygon points="50,90 15,25 85,25" />
+      </g>
+    </svg>
+    <div class="name-mono">A.G.</div>
+    <div class="role">— rapper, son, mensch —</div>
+  </div>
+</header>
+
+<section class="facts reveal">
+  <div class="fact">
+    <div class="lbl">Born</div>
+    <div class="val">Toronto · 24.x.1986</div>
+  </div>
+  <div class="fact">
+    <div class="lbl">Denomination</div>
+    <div class="val">Reform Judaism</div>
+  </div>
+  <div class="fact">
+    <div class="lbl">Bar Mitzvah</div>
+    <div class="val">Age 13 · re-celebrated at 25</div>
+  </div>
+  <div class="fact">
+    <div class="lbl">Schools</div>
+    <div class="val">Forest Hill C.I. · Vaughan Road</div>
+  </div>
+</section>
+
+<article class="article">
+
+  <div class="article-main">
+
+    <h2><span class="num">— Section i —</span>The boy from Forest Hill</h2>
+
+    <p>
+      Aubrey Drake Graham was born in Toronto in October 1986 to a Jewish Canadian mother, Sandi, and an African American father, Dennis, a drummer from Memphis. When his parents divorced, Drake was five. He stayed with his mother in Toronto, and from that point on, his Jewish identity was never something abstract. It was the home he came back to after school, the table he ate dinner at, the community that surrounded his upbringing in Forest Hill &mdash; the same neighbourhood that produced a long line of prominent Jewish Canadian families. The synagogue, the Hebrew lessons, the holidays: he didn&rsquo;t grow up around the idea of Judaism, he grew up <em>inside</em> it.
+    </p>
+    <p>
+      In 2000, when he turned thirteen, his mother threw him a Bar Mitzvah at a Toronto reception hall. By every account, including his own retellings in interviews and music videos, it was a real Reform Jewish ceremony &mdash; Torah portion, prayers, a tallit, the works. He has spoken about it often, and in 2012 he restaged it on camera in the music video for the song &ldquo;HYFR&rdquo; from his album <em>Take Care</em>, complete with a real rabbi, his real family and the actual Hebrew liturgy. It was both a joke and not a joke. He was 25, the most famous rapper in the world, and he wanted his community to see him recommit to the religion he had grown up in.
+    </p>
+
+    <h2><span class="num">— Section ii —</span>How faith shows up in the work</h2>
+
+    <p>
+      You can hear his Jewish identity threaded through Drake&rsquo;s catalogue without trying very hard. He name-checks Hebrew greetings on songs, references the Sabbath and Yom Kippur, jokes about being a &ldquo;light-skin Jewish boy&rdquo; from Toronto. On 2017&rsquo;s <em>More Life</em>, he dropped Yiddish slang into his bars; on <em>Scorpion</em> he spoke openly about identity and self-doubt in language any Jewish kid raised between cultures would recognise. He also openly observes Jewish holidays: he has been photographed wearing a kippah at family events, posted Rosh Hashanah and Passover messages to his hundred-million-plus followers, and named his son Adonis &mdash; a Greek-rooted choice, but one that places him in a long Jewish tradition of giving sons a name that points to the divine.
+    </p>
+    <p>
+      None of this is performance for credibility. Drake doesn&rsquo;t need to advertise being Jewish; if anything, it complicates his marketability. He does it because, by his own description, his mother&rsquo;s side of the family is the side that raised him, and that side is Jewish. In a music genre where artists are often pressured to flatten their identity into one neat brand, Drake&rsquo;s public Jewishness is an act of refusal &mdash; an insistence that he is a Black man <em>and</em> a Jewish man, and that neither half cancels the other.
+    </p>
+
+    <p class="pull-quote">
+      &ldquo;He is a public reminder that Jewish identity in 2026 doesn&rsquo;t look one specific way. It looks like Toronto. It looks like him.&rdquo;
+    </p>
+
+    <h2><span class="num">— Section iii —</span>Why he was chosen, and what he teaches</h2>
+
+    <p>
+      I picked Drake for this profile because he is, for my generation, the most visible example of a Jewish person we already know. Most of my classmates couldn&rsquo;t name a famous rabbi or scholar, but everyone knows Drake. That matters. The Reform tradition he was raised in is, by design, the most flexible branch of modern Judaism &mdash; it tries to keep the ethical core of the religion alive while letting individual Jews engage with ritual on their own terms. Drake lives that out exactly. He doesn&rsquo;t pretend to keep kosher. He doesn&rsquo;t claim to be observant. But he has never denied who he is, never tried to soften it for an audience, and he repeatedly returns to his faith in public moments &mdash; weddings, holidays, family events, his son&rsquo;s milestones.
+    </p>
+    <p>
+      The qualities worth learning from him are not flashy ones. They are loyalty (to his mother, who raised him alone, and to whom he has dedicated multiple songs), resilience (a teenage actor on <em>Degrassi</em> who became one of the most successful musicians in history without abandoning Toronto), and a certain refusal to be embarrassed about where he came from. In a course about religion, that last one is the most important. Drake&rsquo;s Judaism is not the Judaism of the textbook; it is Judaism as it actually lives in twenty-first century North America &mdash; partial, public, proud, threaded through ordinary life. That, more than any sermon, is what most of us will encounter when we encounter Jewish identity in the world. Studying him is studying the religion as it really is, not as it appears in a museum.
+    </p>
+
+  </div>
+
+  <aside class="sidebar reveal">
+    <h3>— Quick Facts —</h3>
+    <dl>
+      <dt>Full name</dt>
+      <dd>Aubrey Drake Graham</dd>
+      <dt>Hometown</dt>
+      <dd>Forest Hill, Toronto, Ontario</dd>
+      <dt>Mother</dt>
+      <dd>Sandi Graham, Jewish Canadian educator</dd>
+      <dt>Father</dt>
+      <dd>Dennis Graham, African American musician (Memphis)</dd>
+      <dt>Branch of Judaism</dt>
+      <dd>Reform &mdash; the largest denomination in North America</dd>
+      <dt>Notable albums</dt>
+      <dd><em>Take Care</em> · <em>Nothing Was the Same</em> · <em>Scorpion</em> · <em>For All the Dogs</em></dd>
+    </dl>
+
+    <div class="terms">
+      <h3 style="margin-top: 2rem;">— Glossary —</h3>
+      <div class="term">
+        <div class="word">Bar Mitzvah</div>
+        <div class="pron">/ b&aacute;hr m&iacute;ts·vuh /</div>
+        <div class="def">The coming-of-age ceremony at 13 in which a Jewish boy reads from the Torah and accepts adult religious responsibility.</div>
+      </div>
+      <div class="term">
+        <div class="word">Reform</div>
+        <div class="pron">/ ri·f&oacute;rm /</div>
+        <div class="def">The most progressive of Judaism&rsquo;s major branches, founded in 19th c. Germany. Emphasises ethics &amp; personal observance over strict ritual.</div>
+      </div>
+      <div class="term">
+        <div class="word">Tallit</div>
+        <div class="pron">/ t&aacute;h·leet /</div>
+        <div class="def">The fringed prayer shawl worn during Jewish ritual. Drake wore one at his Bar Mitzvah and again in &ldquo;HYFR.&rdquo;</div>
+      </div>
+      <div class="term">
+        <div class="word">Tzedakah</div>
+        <div class="pron">/ tseh·d&aacute;h·kah /</div>
+        <div class="def">Charity as a moral obligation, not optional generosity. Central to Reform Jewish ethics.</div>
+      </div>
+    </div>
+  </aside>
+
+</article>
+
+<section class="why reveal">
+  <div class="why-head">— A note for the course —</div>
+  <h2>Connecting Drake to what we&rsquo;ve studied.</h2>
+  <p>
+    The course concept Drake illustrates most clearly is the difference between religion as <em>identity</em> and religion as <em>practice</em>. He is unmistakably the first &mdash; he never disowns being Jewish, references it constantly, and is publicly recognised as one of the most prominent Jews in entertainment. His level of practice, by contrast, is partial: he doesn&rsquo;t keep strictly kosher, isn&rsquo;t Sabbath-observant, hasn&rsquo;t become a baal teshuva. Reform Judaism, the tradition he was raised in, was specifically built to make space for this kind of life. Its founding principle is that Jewish ethics matter more than uniform ritual, and that each Jew can, in good faith, decide how the tradition lives inside their own life.
+  </p>
+  <p>
+    That is why I think Drake is genuinely beautiful as an example, not just an interesting one. He shows that a religion can survive modernity without losing itself &mdash; that you can carry the inheritance of four thousand years on a stage in front of eighty thousand people, and the inheritance still belongs to you. For a generation that often treats faith as something you either fully commit to or quietly drop, that is a quietly radical example to study.
+  </p>
+</section>
+
+<footer class="site-foot">
+  <span class="colophon">Continue to <a href="christianity.html" style="font-style:italic;">04. Christianity &rarr;</a></span>
+  <span class="pageno">Folio · 004</span>
+</footer>
+
+<script src="scripts/reveal.js"></script>
+</body>
+</html>
